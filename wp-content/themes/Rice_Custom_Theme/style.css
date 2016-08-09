@@ -404,6 +404,7 @@ video {
   min-height: 394px; }
 .home .featured-carousel h2 {
   font-size: 4em;
+  margin-bottom: 30px;
   text-align: center; }
 .home .featured-carousel .su-column:first-of-type {
   margin-left: 0; }
