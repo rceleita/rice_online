@@ -1,0 +1,334 @@
+.home {
+
+	#wrapper {
+		@include bgd-img(2016, '08', bgd_wrapper, jpg, 0, 0, no-repeat, transparent);
+		background-size: 100% auto;
+	}
+
+	.home-content {
+		text-align: center;
+		width: 100%;
+
+		.su-column {
+			background-color: $blue-gradient;
+			box-shadow: none;
+			float: none;
+			margin: 0 auto !important;
+			padding: 40px 30px 60px;
+			width: 70%;
+
+			div {
+				font-size: 1.2em;
+
+				p {
+
+					&:first-of-type {
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+
+	.search {
+		margin-bottom: 150px;
+
+		.su-column {
+			box-shadow: none;
+		}
+	}
+
+	.main-buckets {
+
+		.su-column {
+			position: relative;
+			
+			.su-column-inner {
+				@include bgd-img(2016, '08', bgd_bucket, png, 0, 100%, no-repeat, transparent);
+
+				p {
+					margin-bottom: 0;
+				}
+				
+				.bucket-link {
+					height: 100%;
+					display: block;
+					position: absolute;
+					width: 100%;
+					z-index: 9;
+				}
+
+				.content-bucket {
+					border: 1px solid $white;
+
+					div {
+
+						&:first-of-type {
+							background-color: $white;
+							display: block;
+							padding: 40px 20px;
+							position: relative;
+
+							h6 {
+								margin-top: 0;
+							}
+
+							&::before {
+								background: inherit;
+								border-top-right-radius: 50%;
+								border-top-left-radius: 50%;
+								content: '';
+								height: 40px;
+								left: 50%;
+								position: absolute;
+								top: 0;
+								-webkit-transform: translateX(-50%);
+    							transform: translateX(-50%);
+								@include transition(top, .3s);
+								width: 100%;
+							}
+						}
+
+						&.learn {
+							@include gradient-overlay(right, 37, 62, 110, .5, 154, 172, 179, .5);
+							color: $white;
+							font-size: .8em;
+							font-weight: bold;
+							line-height: 1.8em;
+							padding: 20px;
+							text-transform: uppercase;
+
+							i {
+								font-size: 1.8em;
+								margin-right: 15px;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					cursor: pointer;
+					
+					div {
+
+						&:first-of-type {
+
+							&::before {
+								top: -20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.featured {
+
+		.catalog,
+		.content {
+			height: 400px;
+			max-height: 400px;
+			padding: 20px 30px 20px 20px;
+		}
+
+		.catalog {
+			@include bgd-img(2016, '08', bgd_catalog, png, 0, 0, no-repeat, transparent);
+			background-size: cover;
+			border: 1px solid $white;
+
+			.su-divider {
+				width: 70%;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				max-height: 330px;
+				overflow: scroll;
+				padding: 0;
+			}
+		}
+
+		.course {
+			border: 2px solid $white;
+			position: relative;
+
+			.featured-course {
+				margin-bottom: 0;
+
+				.content {
+					@include gradient-overlay(bottom, 31, 55, 105, 1, 160, 178, 186, 1);
+					float: left;
+					width: 35%;
+
+					.divider {
+						background-color: $white;
+						height: 1px;
+						margin: 15px 0;
+						width: 70%;
+					}
+
+					.enroll {
+						margin-top: 40px;
+					}
+				}
+
+				.thumbnail {
+					float: right;
+					margin-right: 0;
+					position: relative;
+					width: 65%;
+
+					img {
+						height: 400px;
+						max-width: 100%;
+					}
+
+					.info {
+						font-size: .8em;
+						font-weight: bold;
+						left: 8%;
+						padding-left: 40px;
+						position: absolute;
+						text-transform: uppercase;
+
+						&::before {
+							font-size: 2.5em;
+							left: 0;
+							position: absolute;
+						}
+
+						&.start {
+							bottom: 25%;
+
+							&::before {
+								content: "\f073";
+							}
+						}
+
+						&.length {
+							bottom: 15%;
+
+							&::before {
+								content: "\f133";
+							}
+						}
+
+						&.time {
+							bottom: 5%;
+
+							&::before {
+								content: "\f017";
+							}
+						}
+
+						span {
+							display: block;
+							font-weight: normal;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.twitter {
+		
+		.su-column {
+			background-color: $twitter-blue;
+			box-shadow: none;
+
+			h3,
+			.aiwidget-title,
+			.imgdisplay img,
+			.tweet_author_name,
+			.tweetlink,
+			.thinkTwitFollow {
+				display: none;
+			}
+
+			.imgdisplay {
+				margin-bottom: 0;
+			}
+
+			.tweettext {
+				line-height: 2em;
+				padding: 15px 0;
+				position: relative;
+				text-align: center;
+
+				&::before {
+					content: '\f099';
+					font-size: 2em;
+					left: 3%;
+					position: absolute;
+				}
+
+				br {
+					display: none;
+				}
+
+				.tweet_author {
+
+					a {
+
+						&::after {
+							content: ' : ';
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.video {
+
+		.video-bucket {
+			background: linear-gradient(to right, rgba(255,255,255,.9) 150px, rgba(255, 0, 0, 0) 40%), url("/rice_online/wp-content/uploads/2016/08/bgd_video.png") 0 0 no-repeat transparent;
+			background-size: cover;
+			padding: 60px 30px;
+
+			.su-column-inner {
+				width: 33%;
+
+				h4 {
+					font-size: 2em;
+					line-height: 1.3em;
+				}
+
+				.su-divider {
+					width: 70%;
+				}
+
+				p {
+					font-size: .9em;
+				}
+
+				.button {
+					margin-top: 40px;
+				}
+			}
+		}
+
+		.form {
+			@include gradient-overlay(bottom, 31, 55, 105, 1, 160, 178, 186, 1);
+			min-height: 394px;
+		}
+	}
+
+	.featured-carousel {
+
+		h2 {
+			font-size: 4em;
+			text-align: center;
+		}
+
+		.su-column {
+
+			&:first-of-type {
+				margin-left: 0;
+			}
+		}
+	}
+}

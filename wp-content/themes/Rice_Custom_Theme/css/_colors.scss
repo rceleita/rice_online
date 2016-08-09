@@ -1,0 +1,104 @@
+body, 
+#main-menu-container {
+	background-color: $dark-blue;
+}
+
+.entry-header, 
+.content-area {
+	background-color: transparent !important;
+}
+
+header {
+	background-color: $white;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+	.catalog & {
+		color: $white;
+	}
+
+	.video-bucket & {
+		color: $dark-blue;
+	}
+
+	a {
+
+		.content & {
+			color: $white;
+		}
+	}
+}
+
+h6 {
+
+	.highschool & {
+		color: $highschool;
+	}
+
+	.college & {
+		color: $college;
+	}
+
+	.career & {
+		color: $career;
+	}
+
+	.lifelong & {
+		color: $lifelong;
+	}
+
+	.catalog & {
+		color: darken(white, 40%);
+	}
+
+	a {
+
+		.content & {
+			color: lighten($dark-blue, 30%);
+		}
+	}
+}
+
+p {
+
+	.home-content &,
+	.content & {
+		color: $white;
+	}
+
+
+}
+
+li {
+
+}
+
+a {
+	
+	.catalog &,
+	.imgdisplay & {
+		color: $white !important;
+	}
+
+	&.green {
+		background-color: $green;
+		color: $white;
+	}
+}
+
+.info {
+	color: $white;
+}

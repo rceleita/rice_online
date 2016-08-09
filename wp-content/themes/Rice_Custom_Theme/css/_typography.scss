@@ -1,0 +1,79 @@
+h1,h2,h3,h4,h5,h6,p,a,li,span {
+	font-family: $font-stack;
+	font-weight: 100;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	text-transform: uppercase;
+}
+
+h4{
+
+	.catalog &,
+	.content & {
+		font-size: 2em;
+		letter-spacing: 1.2px;
+	}
+}
+
+h6 {
+	font-weight: 600;
+
+	.catalog &,
+	.content & {
+		font-weight: normal;
+		margin-top: 0;
+		text-transform: none;
+
+		&::before {
+			font: normal normal normal 14px/1 FontAwesome;
+			margin-right: 5px;
+		}
+	}
+
+	.catalog & {
+
+		&::before {
+			content: url(/rice_online/wp-content/uploads/2016/08/bgd_books.png);
+			opacity: .4;
+		}
+	}
+
+	.content & {
+
+		&::before {
+			color: lighten($dark-blue, 30%);
+			content: '\f02e';
+		}
+	}
+}
+
+.home-content {
+
+	p {
+		font-family: $serif-font;
+	}
+}
+
+.main-buckets {
+
+	h4 {
+		font-size: 2.5em;
+	}
+}
+
+a {
+
+	.catalog & {
+		text-transform: uppercase;
+	}
+}
+
+.button,
+.info,
+.tweettext {
+
+	&::before {
+		font: normal normal normal 14px/1 FontAwesome;
+	}
+}

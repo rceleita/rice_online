@@ -1,0 +1,70 @@
+/* 
+Theme Name: Rice Online Learning Custom Theme
+Theme URI: 
+Description: Rice Online Learning Custom Theme
+Template: responsive-mobile
+Version: 1.0.0
+Author: Signet Interactive 
+Author URI: http://signetinteractive.com
+Rice Online Learning Custom Theme, Copyright (C) 2016 Signet Interactive
+*/
+
+// MIXINS
+
+@import 'css/_mixins.scss';
+
+// VARIABLES
+
+@import 'css/_variables.scss';
+
+/* =============================================
+	COLORS
+============================================= */
+
+@import 'css/_colors.scss';
+
+/* =============================================
+	TYPOGRAPHY
+============================================= */
+
+@import 'css/_typography.scss';
+
+/* =============================================
+	TRANSITIONS
+============================================= */
+
+@import 'css/_transitions.scss';
+
+/* =============================================
+	GENERAL STYLES
+============================================= */
+
+@import 'css/_general.scss';
+
+/* =============================================
+	HOMEPAGE
+============================================= */
+
+@import 'css/_homepage.scss';
+
+/* =============================================
+	INTERNAL PAGES
+============================================= */
+
+@import 'css/_internal.scss';
+
+/* =============================================
+	SIDEBAR
+============================================= */
+
+@import 'css/_sidebar.scss';
+
+/* =============================================
+	FOOTER
+============================================= */
+
+@import 'css/_footer.scss';
+
+/* =============================================
+	RESPONSIVE
+============================================= */

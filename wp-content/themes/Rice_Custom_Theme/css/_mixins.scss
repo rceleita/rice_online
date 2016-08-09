@@ -1,0 +1,25 @@
+/* Color Overlay */
+
+@mixin color-overlay($red, $green, $blue, $opacity) {
+	background-color: rgba($red, $green, $blue, $opacity);
+}
+
+@mixin filter($type,$amount) {
+		-webkit-filter: $type+unquote('(#{$amount})');
+  		   -moz-filter: $type+unquote('(#{$amount})');
+  			-ms-filter: $type+unquote('(#{$amount})');
+  			 -o-filter: $type+unquote('(#{$amount})');
+  				filter: $type+unquote('(#{$amount})');
+}
+
+@mixin bgd-img($year, $month, $img-name, $img-type, $pos-x, $pos-y, $repeat, $color) {
+	background: url('/rice_online/wp-content/uploads/' + $year + '/' + $month + '/' + $img-name + '.' + $img-type + '') $pos-x $pos-y $repeat $color;
+}
+
+@mixin transition ($type, $time) {
+	transition: $type $time;
+}
+
+@mixin gradient-overlay($direction, $red1, $green1, $blue1, $opacity1, $red2, $green2, $blue2, $opacity2){
+	background-image: linear-gradient(to $direction, rgba($red1, $green1, $blue1, $opacity1), rgba($red2, $green2, $blue2, $opacity2));
+}

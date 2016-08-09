@@ -1,0 +1,18 @@
+﻿
+
+.autocomplete-suggestions { background: #ffffff; cursor: default; overflow: auto;}
+.autocomplete-suggestion { padding: 5px 10px; white-space: nowrap; overflow: hidden; text-transform:uppercase; }
+.autocomplete-suggestion:nth-child(odd){  }
+.autocomplete-no-suggestion { padding: 5px 10px;}
+.autocomplete-selected { background: #F2f2f2!important; }
+.autocomplete-suggestions strong { font-weight: bold; color: #000; }
+.autocomplete-group { padding: 5px 10px; background-color:#c5c5c5;  }
+.autocomplete-group strong { font-weight: bold; color: #fff!important; display: block; text-transform:uppercase;    }
+
+/*.autocomplete-ajax { font-size: 28px; padding: 10px; border: 1px solid #CCC; display: block; margin: 20px 0; }*/
+
+
+.autocomplete-suggestions strong {
+  color: #029cca;
+  font-weight: bold;
+}

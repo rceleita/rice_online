@@ -1,0 +1,1446 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mega Search : Advanced Ajax Live Search v1.0\n"
+"POT-Creation-Date: 2015-08-16 17:55+0330\n"
+"PO-Revision-Date: 2015-08-16 17:55+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: .\n"
+
+#: ../class/customefields.php:9
+msgid "Mega Search Custom Fields"
+msgstr ""
+
+#: ../class/customefields.php:17
+msgid "Mega Search Extra Options"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:49
+msgid "Search Type Settings"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:50
+msgid "Search Box Settings"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:51
+msgid "Result Box Settings"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:52
+msgid "Result Box Sections Settings"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:258
+#: ../class/customfields-fields-functions.php:741
+#: ../class/customfields-fields-functions.php:764
+#: ../class/customfields-fields-functions.php:919
+#: ../class/customfields-fields-functions.php:943
+#: ../class/customfields-fields-functions.php:1269
+#: ../class/customfields-fields-functions.php:1744
+#: ../class/customfields-fields-functions.php:1767
+#: ../class/customfields-fields-functions.php:1822
+#: ../class/customfields-fields-functions.php:1846
+#: ../class/customfields-fields-variables.php:1072
+msgid "Top"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:259
+#: ../class/customfields-fields-functions.php:263
+#: ../class/customfields-fields-functions.php:267
+#: ../class/customfields-fields-functions.php:271
+#: ../class/customfields-fields-functions.php:294
+#: ../class/customfields-fields-functions.php:356
+#: ../class/customfields-fields-functions.php:742
+#: ../class/customfields-fields-functions.php:746
+#: ../class/customfields-fields-functions.php:750
+#: ../class/customfields-fields-functions.php:754
+#: ../class/customfields-fields-functions.php:765
+#: ../class/customfields-fields-functions.php:769
+#: ../class/customfields-fields-functions.php:773
+#: ../class/customfields-fields-functions.php:777
+#: ../class/customfields-fields-functions.php:920
+#: ../class/customfields-fields-functions.php:924
+#: ../class/customfields-fields-functions.php:928
+#: ../class/customfields-fields-functions.php:932
+#: ../class/customfields-fields-functions.php:944
+#: ../class/customfields-fields-functions.php:948
+#: ../class/customfields-fields-functions.php:952
+#: ../class/customfields-fields-functions.php:956
+#: ../class/customfields-fields-functions.php:1270
+#: ../class/customfields-fields-functions.php:1274
+#: ../class/customfields-fields-functions.php:1278
+#: ../class/customfields-fields-functions.php:1282
+#: ../class/customfields-fields-functions.php:1303
+#: ../class/customfields-fields-functions.php:1365
+#: ../class/customfields-fields-functions.php:1745
+#: ../class/customfields-fields-functions.php:1749
+#: ../class/customfields-fields-functions.php:1753
+#: ../class/customfields-fields-functions.php:1757
+#: ../class/customfields-fields-functions.php:1768
+#: ../class/customfields-fields-functions.php:1772
+#: ../class/customfields-fields-functions.php:1776
+#: ../class/customfields-fields-functions.php:1780
+#: ../class/customfields-fields-functions.php:1823
+#: ../class/customfields-fields-functions.php:1827
+#: ../class/customfields-fields-functions.php:1831
+#: ../class/customfields-fields-functions.php:1835
+#: ../class/customfields-fields-functions.php:1847
+#: ../class/customfields-fields-functions.php:1851
+#: ../class/customfields-fields-functions.php:1855
+#: ../class/customfields-fields-functions.php:1859
+msgid "Only Digits!"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:259
+#: ../class/customfields-fields-functions.php:263
+#: ../class/customfields-fields-functions.php:267
+#: ../class/customfields-fields-functions.php:271
+#: ../class/customfields-fields-functions.php:294
+#: ../class/customfields-fields-functions.php:356
+#: ../class/customfields-fields-functions.php:742
+#: ../class/customfields-fields-functions.php:746
+#: ../class/customfields-fields-functions.php:750
+#: ../class/customfields-fields-functions.php:754
+#: ../class/customfields-fields-functions.php:765
+#: ../class/customfields-fields-functions.php:769
+#: ../class/customfields-fields-functions.php:773
+#: ../class/customfields-fields-functions.php:777
+#: ../class/customfields-fields-functions.php:790
+#: ../class/customfields-fields-functions.php:794
+#: ../class/customfields-fields-functions.php:798
+#: ../class/customfields-fields-functions.php:802
+#: ../class/customfields-fields-functions.php:834
+#: ../class/customfields-fields-functions.php:838
+#: ../class/customfields-fields-functions.php:842
+#: ../class/customfields-fields-functions.php:846
+#: ../class/customfields-fields-functions.php:920
+#: ../class/customfields-fields-functions.php:924
+#: ../class/customfields-fields-functions.php:928
+#: ../class/customfields-fields-functions.php:932
+#: ../class/customfields-fields-functions.php:944
+#: ../class/customfields-fields-functions.php:948
+#: ../class/customfields-fields-functions.php:952
+#: ../class/customfields-fields-functions.php:956
+#: ../class/customfields-fields-functions.php:1173
+#: ../class/customfields-fields-functions.php:1177
+#: ../class/customfields-fields-functions.php:1181
+#: ../class/customfields-fields-functions.php:1185
+#: ../class/customfields-fields-functions.php:1217
+#: ../class/customfields-fields-functions.php:1221
+#: ../class/customfields-fields-functions.php:1225
+#: ../class/customfields-fields-functions.php:1229
+#: ../class/customfields-fields-functions.php:1270
+#: ../class/customfields-fields-functions.php:1274
+#: ../class/customfields-fields-functions.php:1278
+#: ../class/customfields-fields-functions.php:1282
+#: ../class/customfields-fields-functions.php:1303
+#: ../class/customfields-fields-functions.php:1365
+#: ../class/customfields-fields-functions.php:1745
+#: ../class/customfields-fields-functions.php:1749
+#: ../class/customfields-fields-functions.php:1753
+#: ../class/customfields-fields-functions.php:1757
+#: ../class/customfields-fields-functions.php:1768
+#: ../class/customfields-fields-functions.php:1772
+#: ../class/customfields-fields-functions.php:1776
+#: ../class/customfields-fields-functions.php:1780
+#: ../class/customfields-fields-functions.php:1823
+#: ../class/customfields-fields-functions.php:1827
+#: ../class/customfields-fields-functions.php:1831
+#: ../class/customfields-fields-functions.php:1835
+#: ../class/customfields-fields-functions.php:1847
+#: ../class/customfields-fields-functions.php:1851
+#: ../class/customfields-fields-functions.php:1855
+#: ../class/customfields-fields-functions.php:1859
+msgid "px"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:262
+#: ../class/customfields-fields-functions.php:745
+#: ../class/customfields-fields-functions.php:768
+#: ../class/customfields-fields-functions.php:923
+#: ../class/customfields-fields-functions.php:947
+#: ../class/customfields-fields-functions.php:1273
+#: ../class/customfields-fields-functions.php:1748
+#: ../class/customfields-fields-functions.php:1771
+#: ../class/customfields-fields-functions.php:1826
+#: ../class/customfields-fields-functions.php:1850
+#: ../class/customfields-fields-variables.php:1068
+#: ../class/customfields-fields-variables.php:1279
+msgid "Right"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:266
+#: ../class/customfields-fields-functions.php:749
+#: ../class/customfields-fields-functions.php:772
+#: ../class/customfields-fields-functions.php:927
+#: ../class/customfields-fields-functions.php:951
+#: ../class/customfields-fields-functions.php:1277
+#: ../class/customfields-fields-functions.php:1752
+#: ../class/customfields-fields-functions.php:1775
+#: ../class/customfields-fields-functions.php:1830
+#: ../class/customfields-fields-functions.php:1854
+msgid "Bottom"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:270
+#: ../class/customfields-fields-functions.php:753
+#: ../class/customfields-fields-functions.php:776
+#: ../class/customfields-fields-functions.php:931
+#: ../class/customfields-fields-functions.php:955
+#: ../class/customfields-fields-functions.php:1281
+#: ../class/customfields-fields-functions.php:1756
+#: ../class/customfields-fields-functions.php:1779
+#: ../class/customfields-fields-functions.php:1834
+#: ../class/customfields-fields-functions.php:1858
+#: ../class/customfields-fields-variables.php:1064
+#: ../class/customfields-fields-variables.php:1275
+msgid "Left"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:283
+#: ../class/customfields-fields-functions.php:288
+#: ../class/customfields-fields-functions.php:886
+#: ../class/customfields-fields-functions.php:891
+#: ../class/customfields-fields-functions.php:1292
+#: ../class/customfields-fields-functions.php:1297
+#: ../class/customfields-fields-functions.php:1789
+#: ../class/customfields-fields-functions.php:1794
+msgid "Color"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:293
+#: ../class/customfields-fields-functions.php:355
+#: ../class/customfields-fields-functions.php:1302
+#: ../class/customfields-fields-functions.php:1364
+msgid "Size"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:297
+#: ../class/customfields-fields-functions.php:359
+#: ../class/customfields-fields-functions.php:1306
+#: ../class/customfields-fields-functions.php:1368
+msgid "Font Family"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:422
+#: ../class/customfields-fields-functions.php:1431
+#: ../class/pw-livesearch-options.php:435
+msgid "Choose Image"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:423
+#: ../class/customfields-fields-functions.php:455
+#: ../class/customfields-fields-functions.php:1432
+#: ../class/customfields-fields-functions.php:1463
+msgid "Remove image"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:454
+#: ../class/customfields-fields-functions.php:1462
+msgid "Choose Images"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:465
+#: ../class/customfields-fields-functions.php:480
+#: ../class/customfields-fields-functions.php:1473
+#: ../class/customfields-fields-functions.php:1488
+#: ../class/customfields-fields-variables.php:262
+#: ../class/customfields-fields-variables.php:1103
+#: ../class/customfields-fields-variables.php:1349
+#: ../class/customfields-fields-variables.php:1531
+msgid "Background Color"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:468
+#: ../class/customfields-fields-functions.php:483
+#: ../class/customfields-fields-functions.php:1476
+#: ../class/customfields-fields-functions.php:1491
+msgid "Background Hover Color"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:471
+#: ../class/customfields-fields-functions.php:486
+#: ../class/customfields-fields-functions.php:1479
+#: ../class/customfields-fields-functions.php:1494
+msgid "Text Color"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:474
+#: ../class/customfields-fields-functions.php:489
+#: ../class/customfields-fields-functions.php:1482
+#: ../class/customfields-fields-functions.php:1497
+msgid "Text Hover Color"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:515
+#: ../class/customfields-fields-functions.php:1523
+#: ../class/pw-livesearch-options.php:330
+msgid "Choose Post Type"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:552
+#: ../class/customfields-fields-functions.php:1558 ../includes/actions.php:24
+msgid "Taxonomies "
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:575
+#: ../class/customfields-fields-functions.php:1581 ../includes/actions.php:46
+msgid "Choose Inclulde "
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:576
+#: ../class/customfields-fields-functions.php:1582 ../includes/actions.php:47
+msgid "Choose Exclude"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:659
+#: ../class/customfields-fields-functions.php:1665 ../includes/actions.php:131
+msgid "There is no Taxonomy/Category for this (Custom) post!"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:663
+#: ../class/customfields-fields-functions.php:1669 ../includes/actions.php:135
+msgid "Individual Product(s)"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:665
+#: ../class/customfields-fields-functions.php:1671 ../includes/actions.php:137
+msgid "Choose Include Product(s) ..."
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:671
+#: ../class/customfields-fields-functions.php:1677 ../includes/actions.php:143
+msgid "Choose Exclude Product(s) ..."
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:727
+#: ../class/customfields-fields-functions.php:1729
+#: ../class/pw-livesearch-options.php:312
+msgid "Choose a Page"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:789
+#: ../class/customfields-fields-functions.php:833
+#: ../class/customfields-fields-functions.php:1172
+#: ../class/customfields-fields-functions.php:1216
+msgid "Horizontal Length"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:793
+#: ../class/customfields-fields-functions.php:837
+#: ../class/customfields-fields-functions.php:1176
+#: ../class/customfields-fields-functions.php:1220
+msgid "Vertical Length"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:797
+#: ../class/customfields-fields-functions.php:841
+#: ../class/customfields-fields-functions.php:1180
+#: ../class/customfields-fields-functions.php:1224
+msgid "Blur Radius"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:801
+#: ../class/customfields-fields-functions.php:845
+#: ../class/customfields-fields-functions.php:1184
+#: ../class/customfields-fields-functions.php:1228
+msgid "Spread Radius"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:805
+#: ../class/customfields-fields-functions.php:849
+#: ../class/customfields-fields-functions.php:1188
+#: ../class/customfields-fields-functions.php:1232
+msgid "Shadow Color"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:808
+#: ../class/customfields-fields-functions.php:852
+#: ../class/customfields-fields-functions.php:1191
+#: ../class/customfields-fields-functions.php:1235
+msgid "Opacity"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:823
+#: ../class/customfields-fields-functions.php:868
+#: ../class/customfields-fields-functions.php:905
+#: ../class/customfields-fields-functions.php:1206
+#: ../class/customfields-fields-functions.php:1251
+#: ../class/customfields-fields-functions.php:1808
+msgid "Type"
+msgstr ""
+
+#: ../class/customfields-fields-functions.php:1870
+msgid "Choose Layout"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:35
+msgid "Data Source"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:36
+msgid "Title Settings"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:37
+msgid "Background Settings"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:38
+msgid "Display Settings"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:39
+msgid "Item Settings"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:40
+msgid "Other Settings"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:45
+#: ../class/customfields-fields-variables.php:52
+msgid "Number of Section(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:46
+#: ../class/customfields-fields-variables.php:53
+msgid "Choose your Section"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:59
+msgid "Use as Default Value"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:60
+msgid ""
+"yes,Please. This value will be displayed when search box focused. Otherwise "
+"the result will be displayed after enter minimum character"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:69
+msgid "Data Source Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:70
+msgid "Choose Data Source Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:77
+#: ../class/customfields-fields-variables.php:92
+msgid "Manual Data"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:85
+msgid "Stored Data"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:93
+msgid "Set Your Content"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:104
+msgid "Based on"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:105
+msgid "Choose Data Source Based on"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:112
+msgid "Tag"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:116
+msgid "Taxonomy/Category"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:120
+msgid "Individual Id(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:133
+msgid "Post Number(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:134
+msgid "Choose Post Number(S)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:143
+msgid "Post Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:144
+#: ../class/customfields-fields-variables.php:150
+msgid "Choose Custom Post Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:149
+msgid "Custom Post Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:159
+msgid "Build Query Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:160
+msgid "Choose Build Query Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:167
+msgid "Fetch All Data"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:172
+msgid "Custom Query"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:182
+msgid "Build Query"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:183
+msgid "Select/Unselect Taxonomy, Category or other tag for build Query"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:197
+#: ../class/customfields-fields-variables.php:664
+msgid "Show Title"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:203
+msgid "Section Title"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:216
+msgid "Title Background Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:227
+msgid "Title Font"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:238
+msgid "Title Icon"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:248
+msgid "Title Icon Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:269
+#: ../class/customfields-fields-variables.php:1092
+#: ../class/customfields-fields-variables.php:1483
+msgid "Padding"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:270
+#: ../class/customfields-fields-variables.php:1093
+#: ../class/customfields-fields-variables.php:1484
+msgid "Set Padding"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:276
+#: ../class/customfields-fields-variables.php:993
+#: ../class/customfields-fields-variables.php:1243
+#: ../class/customfields-fields-variables.php:1378
+#: ../class/customfields-fields-variables.php:1490
+msgid "Border"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:277
+#: ../class/customfields-fields-variables.php:1379
+#: ../class/customfields-fields-variables.php:1491
+msgid "Set Border"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:283
+#: ../class/customfields-fields-variables.php:1539
+msgid "Background Image"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:290
+#: ../class/customfields-fields-variables.php:1547
+msgid "Background Size"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:297
+#: ../class/customfields-fields-variables.php:1554
+msgid "Inherit"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:301
+#: ../class/customfields-fields-variables.php:1558
+msgid "Contain"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:305
+#: ../class/customfields-fields-variables.php:1562
+msgid "Cover"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:312
+#: ../class/customfields-fields-variables.php:1570
+msgid "Background Position"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:319
+#: ../class/customfields-fields-variables.php:1577
+msgid "Left top"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:323
+#: ../class/customfields-fields-variables.php:1581
+msgid "left center"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:327
+#: ../class/customfields-fields-variables.php:1585
+msgid "Left Bottom"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:331
+#: ../class/customfields-fields-variables.php:1589
+msgid "Right Top"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:335
+#: ../class/customfields-fields-variables.php:1593
+msgid "Right Center"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:339
+#: ../class/customfields-fields-variables.php:1597
+msgid "Right Bottom"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:343
+#: ../class/customfields-fields-variables.php:1601
+msgid "Center Top"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:347
+#: ../class/customfields-fields-variables.php:1605
+msgid "Center Center"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:351
+#: ../class/customfields-fields-variables.php:1609
+msgid "Center Bottom"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:357
+#: ../class/customfields-fields-variables.php:1616
+msgid "Background Repeat"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:377
+msgid "Display Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:384
+msgid "List"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:388
+msgid "Grid"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:396
+msgid "Grid Skin"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:403
+msgid "Skin One (Outer Description)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:407
+msgid "Skin Two (Boxed Layout)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:419
+msgid "Show in Carousel ?"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:420
+msgid "Yes, Please display items as carousel mode"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:426
+msgid "Item Number"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:427
+msgid "Number of item(s) for display. Leave blank to use from post number"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:434
+msgid "Desktop Column(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:441
+#: ../class/customfields-fields-variables.php:474
+#: ../class/customfields-fields-variables.php:507
+msgid "1 Column"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:445
+#: ../class/customfields-fields-variables.php:478
+#: ../class/customfields-fields-variables.php:511
+msgid "2 Columns"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:450
+#: ../class/customfields-fields-variables.php:483
+#: ../class/customfields-fields-variables.php:516
+msgid "3 Columns"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:455
+#: ../class/customfields-fields-variables.php:488
+#: ../class/customfields-fields-variables.php:521
+msgid "4 Columns"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:467
+msgid "Tablet Column(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:500
+msgid "Mobile Column(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:547
+msgid "Desktop Item(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:558
+msgid "Tablet Items(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:569
+msgid "Mobile Items(s)"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:580
+msgid "Item Margin"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:591
+msgid "Slide Speed"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:592
+msgid "Set Time as Milliseconds, Example 3000=3 seconds"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:602
+msgid "Auto play"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:612
+msgid "Slider Loop"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:622
+msgid "Pause on mouse hover"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:633
+msgid "Show Controls"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:643
+msgid "Show Pagination"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:658
+msgid "Items Fields Option"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:670
+msgid "Show Thumbnail"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:676
+msgid "Show Meta Tags"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:677
+msgid "Show Category/Taxonomy/Tag for items"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:682
+msgid "Count of Tags"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:683
+msgid "Count of each Category/Taxonomy/Tag for items"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:692
+msgid "Show Author"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:703
+msgid "Show Comment No."
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:714
+msgid "Show Date"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:725
+msgid "Show Sale Banner"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:736
+msgid "Show Featured Banner"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:747
+msgid "Show Excerpt/Content"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:753
+msgid "Description Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:754
+msgid "Choose Description Type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:761
+msgid "Full Text"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:766
+msgid "Excerpt"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:776
+msgid "Description Length"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:786
+msgid "Show 'Add to cart' Button"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:797
+msgid "Show Price"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:810
+msgid "Item Layout"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:816
+msgid "Item Border"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:817
+msgid ""
+"Set Item Border. <strong>Note : </strong>This feature will be apply on List "
+"and Grid (Skin two - Outer Description)."
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:827
+msgid "Item Border on Hover"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:828
+msgid ""
+"Set Item Border on Hover. <strong>Note : </strong>This feature will be apply "
+"on List and Grid (Skin two - Outer Description)."
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:838
+msgid "Item Border Radius"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:839
+msgid ""
+"Set Border Radius. <strong>Note : </strong>This feature will be apply on "
+"List and Grid (Skin two - Outer Description)."
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:848
+msgid "Item Thumbnail Shape"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:849
+msgid ""
+"Choose thumbnail shape. <strong>Note : </strong>This feature will be apply "
+"on List and Grid (Skin two - Outer Description)."
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:854
+msgid "Square"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:858
+msgid "Circle"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:862
+msgid "Inherit Border Radius"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:872
+msgid "Title Typography"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:882
+msgid "Item Hover Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:893
+msgid "Meta Typography"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:903
+msgid "Meta Hover Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:914
+msgid "Excerpt Typography"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:924
+msgid "Excerpt Hover Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:935
+msgid "Item Background/Overlay Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:936
+msgid "<strong>Note :</strong> Overlay Color will be used in grid"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:942
+msgid "Item Hover Background Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:953
+msgid "Show \"Show More\" Button"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:960
+msgid "\"Show More\" Translate"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:971
+msgid "Color setting"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:982
+#: ../class/customfields-fields-variables.php:1397
+msgid "Icon"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:994
+msgid "Set Item Border"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1000
+#: ../class/customfields-fields-variables.php:1384
+#: ../class/customfields-fields-variables.php:1504
+msgid "Border Radius"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1001
+#: ../class/customfields-fields-variables.php:1505
+msgid "Set Border Radius"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1007
+#: ../class/pw-livesearch-options.php:35
+msgid "Show More Page"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1008
+msgid ""
+"Choose Showmore Page, You can choose default Showmore page (Mega Search Show "
+"More Page) or add a new page and insert [pw-ajax-live-search-page] to "
+"content. <br /><strong>Note :</strong>Leave blank if you want to use from "
+"general setting"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1018
+msgid "Post Per Page"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1019
+msgid "Set Post Per Page in Show More Page"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1028
+msgid "Display Mode"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1035
+msgid "General Mode"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1039
+msgid "Full screen"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1043
+msgid "Popup"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1047
+msgid "Sticky"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1053
+msgid "Position"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1079
+msgid "Margin Top"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1105
+msgid "Set Background Color for fullscreen/Popup"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1114
+msgid "Overlay Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1116
+msgid "Set Overlay Color for popup"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1125
+msgid "Popup Border Radius"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1126
+msgid "Set Border Radius for Popup"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1135
+msgid "Popup Animation"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1146
+msgid "None"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1150
+msgid "Pop"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1154
+msgid "Slide From Top"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1158
+msgid "Slide From Bottom"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1164
+msgid "Button Settings"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1200
+msgid "Button/Tooltip title"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1211
+msgid "Button Color setting"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1222
+msgid "Icon "
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1223
+msgid "Set Icon for Search Button"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1233
+#: ../class/customfields-fields-variables.php:1343
+msgid "Font Options"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1234
+msgid "Set Font for Search Button"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1244
+msgid "Set Border for Search Button"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1253
+msgid "Button Border Radius"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1254
+msgid "Set Border Radius for Button"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1263
+msgid "Button Alignment"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1285
+#: ../class/customfields-fields-variables.php:1372
+#: ../class/customfields-fields-variables.php:1471
+msgid "Height"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1286
+msgid "Set Height for Search Button"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1326
+msgid "Direction"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1333
+msgid "Left To Right"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1337
+msgid "Right To Left"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1356
+msgid "Placeholder"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1362
+#: ../class/customfields-fields-variables.php:1459
+msgid "Width"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1390
+msgid "Show Icon"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1407
+msgid "Icon Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1418
+msgid "Icon Background Color"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1460
+#: ../class/customfields-fields-variables.php:1472
+msgid "Leave Blank to use default value"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1497
+msgid "Active Border Radius"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1498
+#: ../class/customfields-fields-variables.php:1515
+#: ../class/pw-livesearch-options.php:97
+msgid "Yes, Please"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1514
+msgid "Enable Box Shadow"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1520
+msgid "Box Shadow"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1521
+msgid "Box Shadow type"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1639
+msgid "Custom Class"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1646
+msgid "Custom Css"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1653
+msgid "LiveSearch Export"
+msgstr ""
+
+#: ../class/customfields-fields-variables.php:1660 ../class/custompost.php:50
+msgid "Shortcode"
+msgstr ""
+
+#: ../class/custompost.php:7 ../class/custompost.php:13
+#: ../class/custompost.php:14
+msgid "Mega Search"
+msgstr ""
+
+#: ../class/custompost.php:15 ../class/custompost.php:16
+msgid "Add Mega Search"
+msgstr ""
+
+#: ../class/custompost.php:17 ../class/custompost.php:18
+msgid "Edit Mega Search"
+msgstr ""
+
+#: ../class/custompost.php:20 ../class/custompost.php:21
+msgid "View Mega Search"
+msgstr ""
+
+#: ../class/custompost.php:22
+msgid "Search Mega Search"
+msgstr ""
+
+#: ../class/custompost.php:23
+msgid "No Mega Search Found"
+msgstr ""
+
+#: ../class/custompost.php:24
+msgid "No Mega Search Found in Trash"
+msgstr ""
+
+#: ../class/custompost.php:25
+msgid "Parent Mega Search"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:6
+msgid "General Settings"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:12
+msgid "Search Optipons"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:18
+msgid "Localization"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:28
+msgid "Default Search"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:29
+msgid ""
+"If you want to replace 'Mega Search' with your theme default search, Please "
+"contact us to integrate it with your theme. <a target='_blank' href='http://"
+"support.proword.net/'> Leave a Custom Work Ticket</a>"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:36
+msgid ""
+"Choose Showmore Page, You can choose default Showmore page (Mega Search Show "
+"More Page) or add a new page and insert [pw-ajax-live-search-page] to "
+"content."
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:46
+msgid "Minimum Character"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:47
+msgid "Set Minimum Character To Start Search (min=3)"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:53
+msgid "Search Target Field"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:54
+msgid "Choose Search Target Field"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:78
+msgid "Custom Fields"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:79
+msgid "Select your custom fields for serach query"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:84
+msgid "Manual Result"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:85
+msgid ""
+"Set your manual data. This will be displayed when there is no result for "
+"search"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:90
+msgid "Autocomplete Options"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:96
+msgid "Enable Autocomplete"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:102
+msgid "Autocomplete Source"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:103
+msgid "Choose Autocomplete Source"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:131
+msgid "Post Type(s)"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:132
+msgid "Choose post type(s) for autocomplete based on title"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:146
+msgid "\"Show More\" button"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:147
+#: ../class/pw-livesearch-options.php:154
+#: ../class/pw-livesearch-options.php:161
+#: ../class/pw-livesearch-options.php:168
+#: ../class/pw-livesearch-options.php:175
+msgid "Set your translate"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:153
+msgid "\"Add to cart\" Button"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:160
+msgid "\"Read More\" Button"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:167
+msgid "\"Select options\" Button"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:174
+msgid "\"View options\" Button"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:206
+msgid "Settings saved"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:212 ../main.php:92
+msgid "Mega Search Settings"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:368
+msgid "Choose Live Search"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:479
+msgid "Choose Shorcode"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:495
+msgid "Name (From) Field"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:497
+msgid "Name (To) Field"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:499
+msgid "Email (To) Field"
+msgstr ""
+
+#: ../class/pw-livesearch-options.php:501
+msgid "Description Field"
+msgstr ""
+
+#: ../class/pw-livesearch-statistics.php:19
+msgid "Mega Search Statistics"
+msgstr ""
+
+#: ../class/pw-livesearch-statistics.php:34
+#: ../class/pw-livesearch-statistics.php:40
+msgid "Searched Keyword"
+msgstr ""
+
+#: ../class/pw-livesearch-statistics.php:35
+#: ../class/pw-livesearch-statistics.php:41
+msgid "Qty"
+msgstr ""
+
+#: ../frontend/addtocart_func.php:6
+msgid "Read More"
+msgstr ""
+
+#: ../frontend/addtocart_func.php:8
+msgid "Add To Cart"
+msgstr ""
+
+#: ../frontend/addtocart_func.php:10
+msgid "Select options"
+msgstr ""
+
+#: ../frontend/addtocart_func.php:12
+msgid "View options"
+msgstr ""
+
+#: ../frontend/fetch_section_value.php:168
+#: ../frontend/showmore_frontend.php:178
+msgid "Sale!"
+msgstr ""
+
+#: ../frontend/fetch_section_value.php:177
+#: ../frontend/showmore_frontend.php:187
+msgid "Featured"
+msgstr ""
+
+#: ../frontend/fetch_section_value.php:278
+#: ../frontend/showmore_frontend.php:287
+msgid "No Comments"
+msgstr ""
+
+#: ../frontend/fetch_section_value.php:280
+#: ../frontend/showmore_frontend.php:289
+msgid "Comments"
+msgstr ""
+
+#: ../frontend/fetch_section_value.php:282
+#: ../frontend/showmore_frontend.php:291
+msgid "1 Comment"
+msgstr ""
+
+#: ../frontend/fetch_section_value.php:377
+msgid "Show More"
+msgstr ""
+
+#: ../frontend/fetch_section_value.php:411
+msgid "Not Found!"
+msgstr ""
+
+#: ../frontend/frontend.php:48
+msgid "Type Some Word..."
+msgstr ""
+
+#: ../main.php:92
+msgid "Search Settings"
+msgstr ""
+
+#: ../main.php:94
+msgid "Mega Search  Statistics"
+msgstr ""
+
+#: ../main.php:94
+msgid "Search Statistics"
+msgstr ""
