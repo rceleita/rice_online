@@ -55,6 +55,10 @@ a.green {
 .info {
   color: white; }
 
+#footer {
+  background-color: #ececec;
+  margin-bottom: 40px; }
+
 /* =============================================
 	TYPOGRAPHY
 ============================================= */
@@ -133,35 +137,42 @@ body {
       #header.shrink + #main-menu-container a {
         font-size: 11px; }
 
-#main {
-  width: 100% !important; }
-  #main article {
-    border-bottom: 0 none; }
+#container {
+  background-color: white; }
+
+#main article {
+  border-bottom: 0 none; }
 
 #main-menu-container {
   position: fixed;
   top: 110px;
   width: 100%;
   z-index: 99999; }
-  #main-menu-container #main-navigation .main-nav {
+  #main-menu-container #main-navigation #mega-menu-wrap-header-menu {
+    background-color: transparent; }
+  #main-menu-container #main-navigation .mega-menu {
     float: right; }
-    #main-menu-container #main-navigation .main-nav ul li a {
-      display: inline-block;
-      letter-spacing: 1px;
-      height: 100%;
-      margin: 0;
-      padding: 0px 10px 0 0;
-      text-transform: uppercase; }
-      #main-menu-container #main-navigation .main-nav ul li a::after {
-        color: white;
-        content: '|';
+    #main-menu-container #main-navigation .mega-menu li {
+      margin-right: 60px; }
+      #main-menu-container #main-navigation .mega-menu li a {
         display: inline-block;
-        margin-left: 10px; }
-    #main-menu-container #main-navigation .main-nav ul li:last-of-type a::after {
-      display: none; }
+        letter-spacing: 1px;
+        font-weight: 500 !important;
+        height: 100%;
+        margin: 0;
+        padding: 0px;
+        text-transform: uppercase !important; }
+        #main-menu-container #main-navigation .mega-menu li a:hover {
+          background: transparent !important;
+          color: #cccccc !important; }
+      #main-menu-container #main-navigation .mega-menu li:last-of-type {
+        margin-right: 0; }
+      #main-menu-container #main-navigation .mega-menu li.mega-toggle-on a {
+        background: transparent !important;
+        color: #cccccc !important; }
 
-#content-full {
-  padding-top: 180px; }
+#wrapper {
+  padding-top: 150px; }
 
 .su-row .su-column {
   box-shadow: 0 0 10px #1e3769; }
@@ -193,7 +204,7 @@ video {
 .button {
   border: 2px solid white;
   border-radius: 8px;
-  display: block;
+  display: inline-block;
   position: relative;
   text-align: center;
   text-transform: uppercase; }
@@ -204,7 +215,8 @@ video {
   .button.large {
     font-size: .8em;
     line-height: 2.5em;
-    padding: 7px 15px; }
+    padding: 7px 15px;
+    width: 100%; }
     .button.large::before {
       font-size: 2.5em; }
   .button.enroll::before {
@@ -221,6 +233,8 @@ video {
 /* =============================================
 	HOMEPAGE
 ============================================= */
+.home #container {
+  background: transparent !important; }
 .home #wrapper {
   background: url("/rice_online/wp-content/uploads/2016/08/bgd_wrapper.jpg") 0 0 no-repeat transparent;
   background-size: 100% auto; }
@@ -245,7 +259,7 @@ video {
 .home .main-buckets .su-column {
   position: relative; }
   .home .main-buckets .su-column .su-column-inner {
-    background: url("/rice_online/wp-content/uploads/2016/08/bgd_bucket.png") 0 100% no-repeat transparent; }
+    background: url("/rice_online/wp-content/uploads/2016/08/bgd_bucket.png") 100% 100% no-repeat transparent; }
     .home .main-buckets .su-column .su-column-inner p {
       margin-bottom: 0; }
     .home .main-buckets .su-column .su-column-inner .bucket-link {
@@ -254,6 +268,8 @@ video {
       position: absolute;
       width: 100%;
       z-index: 9; }
+    .home .main-buckets .su-column .su-column-inner img {
+      min-width: 100%; }
     .home .main-buckets .su-column .su-column-inner .content-bucket {
       border: 1px solid white; }
       .home .main-buckets .su-column .su-column-inner .content-bucket div:first-of-type {
@@ -406,8 +422,52 @@ video {
   font-size: 4em;
   margin-bottom: 30px;
   text-align: center; }
-.home .featured-carousel .su-column:first-of-type {
-  margin-left: 0; }
+.home .featured-carousel .su-column {
+  background: url("/rice_online/wp-content/uploads/2016/08/bgd_bucket.png") 100% 100% no-repeat transparent; }
+  .home .featured-carousel .su-column:first-of-type {
+    margin-left: 0; }
+  .home .featured-carousel .su-column img {
+    width: 100%; }
+  .home .featured-carousel .su-column a {
+    color: #1e3769; }
+    .home .featured-carousel .su-column a:hover {
+      text-decoration: none; }
+      .home .featured-carousel .su-column a:hover h4::before {
+        top: -20px; }
+  .home .featured-carousel .su-column h4 {
+    background-color: white;
+    font-size: 2em;
+    margin: 0;
+    padding: 40px 20px 15px;
+    position: relative; }
+    .home .featured-carousel .su-column h4::before {
+      background: inherit;
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
+      content: '';
+      height: 40px;
+      left: 50%;
+      position: absolute;
+      top: 0;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      transition: top 0.3s;
+      width: 100%; }
+  .home .featured-carousel .su-column .learn {
+    background-image: linear-gradient(to right, rgba(37, 62, 110, 0.5), rgba(154, 172, 179, 0.5));
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    color: white;
+    font-size: .8em;
+    font-weight: bold;
+    line-height: 1.8em;
+    margin-bottom: 0;
+    padding: 20px;
+    text-transform: uppercase; }
+    .home .featured-carousel .su-column .learn i {
+      font-size: 1.8em;
+      margin-right: 15px; }
 
 /* =============================================
 	INTERNAL PAGES
@@ -418,6 +478,20 @@ video {
 /* =============================================
 	FOOTER
 ============================================= */
+#footer #social-icons-container {
+  float: right;
+  padding-top: 30px; }
+#footer .social-icons li {
+  height: 30px;
+  margin-left: 15px;
+  width: 30px; }
+  #footer .social-icons li a {
+    background-color: #1e3769;
+    border-radius: 50%;
+    line-height: 2em;
+    height: 100%;
+    width: 100%; }
+
 /* =============================================
 	RESPONSIVE
 ============================================= */

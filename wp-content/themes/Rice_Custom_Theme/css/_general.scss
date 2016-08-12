@@ -39,8 +39,11 @@ body {
 	}
 }
 
+#container {
+	background-color: $white;
+}
+
 #main {
-	width: 100% !important;
 
 	article {
 		border-bottom: 0 none;
@@ -55,33 +58,54 @@ body {
 
 	#main-navigation {
 
-		.main-nav {
+		#mega-menu-wrap-header-menu {
+			background-color: transparent;
+		}
+
+		.mega-menu {
 			float: right;
 
-			ul {
+			li {
+				margin-right: 60px;
 
-				li {
+				a {
+					display: inline-block;
+					letter-spacing: 1px;
+					font-weight: 500 !important;
+					height: 100%;
+					margin: 0;
+					padding: 0px;
+					text-transform: uppercase !important;
 
-					a {
-						display: inline-block;
-						letter-spacing: 1px;
-						height: 100%;
-						margin: 0;
-						padding: 0px 10px 0 0;
-						text-transform: uppercase;
-
-						&::after {
-							color: $white;
-							content: '|';
-							display: inline-block;
-							margin-left: 10px;
-						}
+					&:hover {
+						background: transparent !important;
+						color: darken($white, 20%) !important;
 					}
 
-					&:last-of-type {
-						a::after {
-							display: none;
-						}
+					// &::after {
+					// 	color: $white;
+					// 	content: '|';
+					// 	display: inline-block;
+					// 	margin-left: 10px;
+					// }
+				}
+
+				&:last-of-type {
+					margin-right: 0;
+
+					a {
+
+					// ::after {
+					// 	display: none;
+					// }
+					}
+				}
+
+				&.mega-toggle-on {
+
+					a {
+						background: transparent !important;
+						color: darken($white, 20%) !important;
 					}
 				}
 			}
@@ -89,8 +113,8 @@ body {
 	}
 }
 
-#content-full {
-	padding-top: 180px;
+#wrapper {
+	padding-top: 150px;
 }
 
 .su-row {
@@ -142,7 +166,7 @@ video {
 .button {
 	border: 2px solid $white;
 	border-radius: 8px;
-	display: block;
+	display: inline-block;
 	position: relative;
 	text-align: center;
 	text-transform: uppercase;
@@ -161,6 +185,7 @@ video {
 		font-size: .8em;
 		line-height: 2.5em;
 		padding: 7px 15px;
+		width: 100%;
 
 		&::before {
 			font-size: 2.5em;

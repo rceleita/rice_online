@@ -1,5 +1,8 @@
 .home {
 
+	#container {
+		background: transparent !important;
+	}
 	#wrapper {
 		@include bgd-img(2016, '08', bgd_wrapper, jpg, 0, 0, no-repeat, transparent);
 		background-size: 100% auto;
@@ -44,7 +47,7 @@
 			position: relative;
 			
 			.su-column-inner {
-				@include bgd-img(2016, '08', bgd_bucket, png, 0, 100%, no-repeat, transparent);
+				@include bgd-img(2016, '08', bgd_bucket, png, 100%, 100%, no-repeat, transparent);
 
 				p {
 					margin-bottom: 0;
@@ -56,6 +59,10 @@
 					position: absolute;
 					width: 100%;
 					z-index: 9;
+				}
+
+				img {
+					min-width: 100%;
 				}
 
 				.content-bucket {
@@ -326,9 +333,71 @@
 		}
 
 		.su-column {
+			@include bgd-img(2016, '08', bgd_bucket, png, 100%, 100%, no-repeat, transparent);
 
 			&:first-of-type {
 				margin-left: 0;
+			}
+
+			img {
+				width: 100%;
+			}
+
+			a {
+				color: $dark-blue;
+
+				&:hover {
+					text-decoration: none;
+
+					h4 {
+
+						&::before {
+							top: -20px;
+						}
+					}
+				}
+			}
+
+			h4 {
+				background-color: $white;
+				font-size: 2em;
+				margin: 0;
+				padding: 40px 20px 15px;
+				position: relative;
+
+				&::before {
+					background: inherit;
+					border-top-right-radius: 50%;
+					border-top-left-radius: 50%;
+					content: '';
+					height: 40px;
+					left: 50%;
+					position: absolute;
+					top: 0;
+					-webkit-transform: translateX(-50%);
+					transform: translateX(-50%);
+					@include transition(top, .3s);
+					width: 100%;
+				}
+			}
+
+			.learn {
+				@include gradient-overlay(right, 37, 62, 110, .5, 154, 172, 179, .5);
+				border-bottom: 1px solid $white;
+				border-left: 1px solid $white;
+				border-right: 1px solid $white;
+				color: $white;
+				font-size: .8em;
+				font-weight: bold;
+				line-height: 1.8em;
+				margin-bottom: 0;
+				padding: 20px;
+				text-transform: uppercase;
+
+				i {
+					font-size: 1.8em;
+					margin-right: 15px;
+				}
 			}
 		}
 	}

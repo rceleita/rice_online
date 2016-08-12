@@ -29,7 +29,7 @@ class ListCategories{
         'feed_type'          => '',
         'feed_image'         => '',
         'exclude'            => '',
-        'exclude_tree'       => '66, 72, 71, 75',
+        'exclude_tree'       => '23,35,27,31,42',
         'include'            => '',
         'hierarchical'       => 0,
         'title_li'           => __( '' ),
@@ -109,7 +109,7 @@ function custom_register() {
 		'name'               => _x( 'Courses', 'post type general name' ),
 		'singular_name'      => _x( 'Course', 'post type singular name' ),
 		'menu_name'          => _x( 'Courses', 'admin menu' ),
-		'name_admin_bar'     => _x( 'Course', 'add new on admin bar' ),
+		'name_admin_bar'     => _x( 'Courses', 'add new on admin bar' ),
 		'add_new'            => _x( 'Add New', 'course' ),
 		'add_new_item'       => __( 'Add New Course' ),
 		'new_item'           => __( 'New Course' ),
@@ -135,7 +135,8 @@ function custom_register() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'categories','custom-fields' )
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'categories', 'custom-fields' ),
+		'taxonomies' 		 => array('post_tag')
 	);
 
 	register_post_type( 'course', $args );
@@ -290,10 +291,10 @@ function quick_info_shorty( $atts ) {
         $return .= '<div class="divider"></div>';
         $return .= '<p class="excerpt">' . $content . '</p>';
         $return .= '<a class="button green large enroll" href="' . $enroll . '">Enroll Now</a></div>';
-        $return .= '<div class="thumbnail"><img src="' . $img_url . '" >';
+        $return .= '<div class="thumbnail"><a class="item" href="' . $permalink . '"><img src="' . $img_url . '" ></a>';
         $return .= '<div class="info start"><span>Class Start:</span>' . $start . '</div>'; 
         $return .= '<div class="info length"><span>Course Length:</span>' . $length . '</div>'; 
-        $return .= '<div class="info time"><span>Required:</span>' . $time . '</div>'; 
+        $return .= '<div class="info time"><span>Required:</span>' . $time . ' HRS Per Week</div>'; 
     } 
 
 	$return .= '</div></div>';
@@ -325,21 +326,108 @@ function quick_info_featured( $atts ) {
         $permalink 		= get_permalink($post->ID);
         $thumb 			= get_post_thumbnail_id($post->ID);
 		$img_url 		= wp_get_attachment_url( $thumb,'full');
-		$content 		= get_the_excerpt($post->ID);
-		$enroll 		= get_post_meta($post->ID, 'Enroll Now', true);
-		$start 			= get_post_meta($post->ID, 'Course Start', true);
-		$length 		= get_post_meta($post->ID, 'Course Length', true);
-		$time 			= get_post_meta($post->ID, 'Time Requirement', true);
 
-        $return .= '<div class="su-column su-column-size-1-4"><div class="su-column-inner su-clearfix"><img src="' . $img_url . '" >';
-        $return .= '<h4><a class="item" href="' . $permalink . '">' . apply_filters( 'the_title', $post->post_title ) . '</a></h4>';
-        $return .= '<div class="divider"></div>';
-        $return .= '<p class="excerpt">' . $content . '</p>';
+
+        $return .= '<div class="su-column su-column-size-1-4"><div class="su-column-inner su-clearfix">';
+        $return .= '<a class="item" href="' . $permalink . '"><img src="' . $img_url . '" >';
+        //$return .= '<h6>' . $category . '</h6>';
+        $return .= '<h4>' . apply_filters( 'the_title', $post->post_title ) . '</h4>';
+        $return .= '<p class="learn"><i class="fa fa-file-text-o"></i> Learn More</p></a>';
         $return .= '</div></div>';
     } 
 
 	return $return;
 }
 add_shortcode( 'featured_course_carousel', 'quick_info_featured' ); 
+
+// Widgets
+
+// Creating the widget 
+class rol_widget extends WP_Widget {
+
+function __construct() {
+parent::__construct(
+// Base ID of your widget
+'rol_widget', 
+
+// Widget name will appear in UI
+__('Rice Online Widget', 'rol_widget_domain'), 
+
+// Widget description
+array( 'description' => __( 'Rice Online Learning Related Courses', 'rol_widget_domain' ), ) 
+);
+}
+
+// Creating widget front-end
+// This is where the action happens
+public function widget( $args, $instance ) {
+	$title = apply_filters( 'widget_title', $instance['title'] );
+	// before and after widget arguments are defined by themes
+	echo $args['before_widget'];
+	if ( ! empty( $title ) )
+	echo $args['before_title'] . $title . $args['after_title'];
+
+	// This is where you run the code and display the output
+
+	$posts = get_posts( array(
+	    'posts_per_page' 	=> 4,
+	    'post_status'    	=> 'publish',
+	    'post_type'			=> 'course',
+	    'taxonomy'			=> 'field-of-study'
+	) );
+
+	$return = '';
+
+	foreach ( $posts as $post ) {
+
+	    $permalink 		= get_permalink($post->ID);
+	    $thumb 			= get_post_thumbnail_id($post->ID);
+		$img_url 		= wp_get_attachment_url( $thumb,'full');
+
+
+	    $return .= '<div class="su-column su-column-size-1-4"><div class="su-column-inner su-clearfix">';
+	    $return .= '<a class="item" href="' . $permalink . '"><img src="' . $img_url . '" >';
+	    //$return .= '<h6>' . $category . '</h6>';
+	    $return .= '<h4>' . apply_filters( 'the_title', $post->post_title ) . '</h4>';
+	    $return .= '<p class="learn"><i class="fa fa-file-text-o"></i> Learn More</p></a>';
+	    $return .= '</div></div>';
+	} 
+
+	echo($return);
+
+	echo __( $output, 'rol_widget_domain' );
+	echo $args['after_widget'];
+}
+		
+// Widget Backend 
+public function form( $instance ) {
+	if ( isset( $instance[ 'title' ] ) ) {
+		$title = $instance[ 'title' ];
+	}
+	else {
+		$title = __( 'New title', 'rol_widget_domain' );
+	}
+	// Widget admin form
+	?>
+	<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+	</p>
+	<?php 
+}
+	
+// Updating widget replacing old instances with new
+public function update( $new_instance, $old_instance ) {
+	$instance = array();
+	$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+	return $instance;
+}
+} // Class rol_widget ends here
+
+// Register and load the widget
+function wpb_load_widget() {
+	register_widget( 'rol_widget' );
+}
+add_action( 'widgets_init', 'wpb_load_widget' );
 
 ?>
