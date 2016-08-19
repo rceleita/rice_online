@@ -1,433 +1,377 @@
-<?php 
+<?php
 
-function frontend_scripts() {
-        wp_enqueue_script('jquery');
-        wp_enqueue_script('custom_scripts', get_stylesheet_directory_uri() . '/scripts/script.js');
-}
+////////////////////////////////////////////
+// INCLUDES
+////////////////////////////////////////////
 
-add_action('wp_enqueue_scripts', 'frontend_scripts');
-
-// Display Child Pages
+include 'framework/functions/frontend-scripts.php';
+include 'framework/functions/custom-post.php';
+include 'framework/functions/list-categories.php';
+include 'framework/functions/blog-functions.php';
+include 'framework/functions/featured-post.php';
+include 'framework/functions/tax-functions.php';
 
 
 /* ================================================== */
 
-//List Categories
-class ListCategories{
-  static function list_categories($atts, $content = null) {
-    $atts = shortcode_atts(
-      array(
-        'show_option_all'    => '',
-        'orderby'            => 'name',
-        'order'              => 'ASC',
-        'style'              => 'list',
-        'show_count'         => 0,
-        'hide_empty'         => 1,
-        'use_desc_for_title' => 1,
-        'child_of'           => 0,
-        'feed'               => '',
-        'feed_type'          => '',
-        'feed_image'         => '',
-        'exclude'            => '',
-        'exclude_tree'       => '23,35,27,31,42',
-        'include'            => '',
-        'hierarchical'       => 0,
-        'title_li'           => __( '' ),
-        'show_option_none'   => __( 'No Courses' ),
-        'number'             => null,
-        'echo'               => 1,
-        'depth'              => 0,
-        'current_category'   => 0,
-        'pad_counts'         => 0,
-        'taxonomy'           => 'category_courses',
-        'walker'             => null
-      ), $atts
+
+// SLUGIFY
+
+function elr_slugify($str) {
+    return str_replace(' ', '-', strtolower($str));
+}
+
+/* ================================================== */
+
+// Get Related Terms
+
+function elr_get_related_terms($taxonomy, $type) {
+    $rel_terms = array();
+    $query = new WP_Query(
+        array(
+            'post_type' => $type,
+            'posts_per_page' => -1
+           )
+  	);
+
+    $items = $query->get_posts();
+
+    foreach($items as $item) {
+        $term = wp_get_post_terms($item->ID, $taxonomy);
+        array_push($rel_terms, $term[0]->name);
+    }
+
+    return array_unique($rel_terms);
+}
+
+/* ================================================== */
+
+// GET TERM NAMES
+
+function elr_get_term_names($terms) {
+    $term_names = [];
+
+    // create an array of term names
+    foreach ($terms as $term) {
+        array_push($term_names, $term->name);
+    }
+
+    return $term_names;
+}
+
+/* ================================================== */
+
+// COURSE OPTIONS
+
+function elr_product_options($post_type, $taxonomy, $post_id) {
+
+    $tax_args = array(
+        'orderby'           => 'name',
+        'order'             => 'ASC',
+        'hide_empty'        => true
+   );
+
+    $tax_name = ucwords(str_replace('_' , ' ', $taxonomy));
+    $terms = get_terms(array($taxonomy), $tax_args);
+    $style = wp_get_post_terms($post_id, 'course');
+    $style = $style[0];
+    $active_class = ($taxonomy == 'category_courses');
+    $rel_terms = elr_get_related_terms($taxonomy, 'course', $style, 'style');
+
+    // if term is in style group add class active
+
+    if ($terms) {
+        echo '<nav class="taxonomy-nav">';
+        echo '<ul class="taxonomy-menu taxonomy-' . $taxonomy . '">';
+
+            // list all terms
+            foreach ($terms as $term) {
+                $term_link = get_term_link($term);
+                // if term is in the rel_terms array add an active class
+                if (in_array($term->name, $rel_terms, TRUE)) {
+                    echo '<li class="';
+                    echo elr_slugify($taxonomy) . '-' . elr_slugify($term->name);
+                    echo '">';
+
+                    if ($taxonomy == 'color') {
+                        echo '<span class="' . $active_class . '">';
+                        echo(ucwords($term->name));
+                        echo '</span>';
+                    } else {
+                        echo '<span ';
+                        echo 'class="' . $active_class . '"';
+                        echo '>';
+                        echo(ucwords($term->name));
+                        echo '</span>';
+                    }
+
+                    echo '</li>';
+                }
+            }
+        echo '</ul></nav>';
+    }
+}
+
+// GET RELATED POSTS
+
+function elr_get_related_posts($taxonomy = 'category', $post_type = 'current', $num_posts = 3) {
+    $id = get_the_ID();
+
+    // config
+    if ($taxonomy === 'category') {
+        $term_name = $taxonomy;
+        $term_id = 'cat_ID';
+    } else if ($taxonomy === 'tag') {
+        $term_name = 'post_tag';
+        $term_id = 'term_id';
+    } else {
+        $term_name = $taxonomy;
+        $term_id = 'term_id';
+    }
+
+    if ($post_type == 'current') {
+        $post_type = get_post_type();
+    }
+
+    $terms = get_the_terms($id, $term_name);
+    $related = [];
+
+    // TODO: need to check if term exists
+    if (!empty($terms)) {
+        foreach($terms as $term) {
+            $related[] = $term->$term_id;
+        }
+    } else {
+        return;
+    }
+
+    if ($taxonomy == 'category') {
+        $posts = new WP_Query(
+            array(
+                'posts_per_page' => $num_posts,
+                'category__in' => $related,
+                'post__not_in' => array($id),
+                'post_type' => $post_type,
+                'orderby' => 'post_date',
+           )
+       );
+    } else if ($taxonomy == 'tag') {
+        $posts = new WP_Query(
+            array(
+                'posts_per_page' => $num_posts,
+                'tag__in' => $related,
+                'post__not_in' => array($id),
+                'post_type' => $post_type,
+                'orderby' => 'post_date',
+           )
+       );
+    } else {
+        $posts = new WP_Query(
+            array(
+                'posts_per_page' => $num_posts,
+                'post_type' => $post_type,
+                'post__not_in' => array($id),
+                'orderby' => 'post_date',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => $taxonomy,
+                        'terms'    => $related,
+                        'field'    => 'term_id',
+                   ),
+               ),
+           )
+       );
+    }
+
+    return $posts;
+}
+
+function elr_related_posts_images($taxonomy = 'category', $post_type = 'current', $num_posts = 3) {
+    $loop = elr_get_related_posts($taxonomy, $post_type, $num_posts);
+
+    if ($loop->have_posts()) {
+        $related_posts = '<ul class="related-category-posts elr-unstyled-list">';
+        while($loop->have_posts()) {
+            $loop->the_post();
+            if (has_post_thumbnail()) {
+                $related_posts .= '<li><a href="' . get_permalink() . '">' . get_the_post_thumbnail() . '</a></li>';
+            } else {
+                $related_posts .= '<li><a href="' . get_permalink() . '"><img src="' . IMAGES . '/design-ring.jpg" alt="Ring"></a></li>';
+            }
+        }
+        $related_posts .= '</ul>';
+        wp_reset_query();
+
+        return $related_posts;
+    } else {
+        return;
+    }
+}
+
+/* ================================================== */
+
+function elr_tax_dropdown_filter($post_type, $taxonomy, $current_term = null) {
+
+    $tax_args = array(
+        'orderby'           => 'name',
+        'order'             => 'ASC',
+        'hide_empty'        => true
+   );
+
+    $tax_name = ucwords(str_replace('_' , ' ', $taxonomy));
+    $terms = get_terms(array($taxonomy), $tax_args);
+    $term_names = elr_get_term_names($terms);
+    $active_class = ($taxonomy == 'color') ? 'active color-swatch' : 'active';
+
+    if ($terms) {
+        echo '<select class="taxonomy-dropdown taxonomy-dropdown-filter" data-tax="' . $taxonomy . '">';
+        echo '<option value="all" selected>Select ' . ucwords($taxonomy) . '</option>';
+        echo '<option value="all">All</option>';
+
+            // list all terms
+            foreach ($terms as $term) {
+                $term_link = get_term_link($term);
+                echo '<option ';
+                    echo 'value="';
+                    echo $term->slug;
+                    echo '">';
+                    echo(ucwords($term->name));
+                echo '</option>';
+            }
+        echo '</select>';
+    }
+}
+
+function elr_tax_dropdown($post_type, $taxonomy, $current_term = null) {
+
+    $tax_args = array(
+        'orderby'           => 'name',
+        'order'             => 'ASC',
+        'hide_empty'        => true
     );
 
-    ob_start();
-    wp_list_categories($atts);
-    $output = ob_get_contents();
-    ob_end_clean();
-    return $output;
-  }
+    $tax_name = ucwords(str_replace('_' , ' ', $taxonomy));
+    $terms = get_terms(array($taxonomy), $tax_args);
+    $term_names = elr_get_term_names($terms);
+
+    if ($terms) {
+        echo '<select class="taxonomy-dropdown">';
+        echo '<option value="" selected>Select ' . ucwords($taxonomy) . '</option>';
+
+            // list all terms
+            foreach ($terms as $term) {
+                $term_link = get_term_link($term);
+                echo '<option ';
+                    echo 'value="';
+                    echo esc_url($term_link);
+                    echo '">';
+                    echo(ucwords($term->name));
+                echo '</option>';
+            }
+        echo '</select>';
+    }
 }
 
-add_shortcode( 'categories', array('ListCategories', 'list_categories') );
+function elr_tax_nav_filter($query, $post_type, $taxonomy, $current_term = null) {
 
-/* ================================================== */
+    $tax_args = array(
+        'orderby'           => 'name',
+        'order'             => 'ASC',
+        'hide_empty'        => true
+   );
 
-//Featured Course Category
-class FeaturedCourse{
-  static function featured_category($atts, $content = null) {
-    $atts = shortcode_atts(
-      array(
-        'show_option_all'    => '',
-        'orderby'            => 'name',
-        'order'              => 'ASC',
-        'style'              => '',
-        'show_count'         => 0,
-        'hide_empty'         => 1,
-        'use_desc_for_title' => 1,
-        'child_of'           => 0,
-        'feed'               => '',
-        'feed_type'          => '',
-        'feed_image'         => '',
-        'exclude'            => '',
-        'exclude_tree'       => '',
-        'include'            => '42',
-        'hierarchical'       => 0,
-        'title_li'           => __( '' ),
-        'show_option_none'   => __( 'No Courses' ),
-        'number'             => null,
-        'echo'               => 1,
-        'depth'              => 0,
-        'current_category'   => 0,
-        'pad_counts'         => 0,
-        'taxonomy'           => 'category_courses',
-        'walker'             => null
-      ), $atts
-    );
+    $tax_name 	= ucwords(str_replace('_' , ' ', $taxonomy));
+    $terms 		= get_terms(array($taxonomy), $tax_args);
+    $term_names = elr_get_term_names($terms);
+    $rel_terms 	= elr_get_related_terms($taxonomy, $post_type);
+    $base_url	= site_url();
 
-    ob_start();
-    wp_list_categories($atts);
-    $output = ob_get_contents();
-    ob_end_clean();
-    return $output;
-  }
+    if ($terms) {
+        echo '<nav class="taxonomy-nav taxonomy-filter">';
+        echo '<ul class="taxonomy-menu taxonomy-' . $taxonomy . '" data-tax="' . $taxonomy . '">';
+
+            if ($current_term && in_array($term_names, $current_term)) {
+                echo '<li class="filter-all"><a href="' . $base_url . '/courses/" data-term="all">All</a></li>';
+            } else {
+                echo '<li class="filter-all"><a href="' . $base_url . '/courses/" class="active" data-term="all">All</a></li>';
+            }
+
+            // list all terms
+            foreach ($terms as $term) {
+                if (in_array($term->name, $rel_terms, TRUE)) {
+                    $term_link = get_term_link($term);
+
+                    if ($term->name === $current_term && $taxonomy == 'course_platform') {
+                        $class = 'active platform';
+                    } else if ($term->name === $current_term) {
+                        $class = 'active';
+                    } else if ($taxonomy == 'course_platform') {
+                        $class = 'inactive';
+                    } else {
+                        $class = 'inactive';
+                    }
+
+                    echo '<li class="';
+                    echo elr_slugify($taxonomy) . '-' . elr_slugify($term->name);
+                    echo '">';
+                        echo '<a href="';
+                        echo esc_url($term_link) . '"';
+                            echo 'class="' . $class . '"';
+                            echo 'data-term="' . $term->slug . '"';
+                        echo '>';
+                        echo(ucwords($term->name));
+                        echo '</a>';
+                    echo '</li>';
+                }
+            }
+        echo '</ul></nav>';
+    }
 }
 
-add_shortcode( 'listfeatured', array('FeaturedCourse', 'featured_category') );
+function get_products($tax, $term, $num = 5) {
+    $args = [
+        'post_type' => 'course',
+        'posts_per_page' => $num,
+        'tax_query' => [
+            [
+                'taxonomy' => $tax,
+                'field' => 'slug',
+                'terms' => $term
+            ]
+        ]
+    ];
 
-/* ================================================== */
+    $query = new WP_Query($args);
 
-/* CUSTOM POST TYPES */
-
-add_action('init', 'custom_register');
-
-function custom_register() {
-	$labels = array(
-		'name'               => _x( 'Courses', 'post type general name' ),
-		'singular_name'      => _x( 'Course', 'post type singular name' ),
-		'menu_name'          => _x( 'Courses', 'admin menu' ),
-		'name_admin_bar'     => _x( 'Courses', 'add new on admin bar' ),
-		'add_new'            => _x( 'Add New', 'course' ),
-		'add_new_item'       => __( 'Add New Course' ),
-		'new_item'           => __( 'New Course' ),
-		'edit_item'          => __( 'Edit Course' ),
-		'view_item'          => __( 'View Course' ),
-		'all_items'          => __( 'All Courses' ),
-		'search_items'       => __( 'Search Courses' ),
-		'parent_item_colon'  => __( 'Parent Courses:' ),
-		'not_found'          => __( 'No courses found.' ),
-		'not_found_in_trash' => __( 'No courses found in Trash.' )
-	);
-
-	$args = array(
-		'labels'             => $labels,
-		'description'        => __( 'Description.' ),
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'course' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'categories', 'custom-fields' ),
-		'taxonomies' 		 => array('post_tag')
-	);
-
-	register_post_type( 'course', $args );
-
-    $labels = array(
-		'name'              => _x( 'Course Categories', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Course Category', 'taxonomy singular name' ),
-		'search_items'      => __( 'Search Course Categories' ),
-		'all_items'         => __( 'All Course Categories' ),
-		'parent_item'       => __( 'Parent Category' ),
-		'parent_item_colon' => __( 'Parent Category:' ),
-		'edit_item'         => __( 'Edit Category' ),
-		'update_item'       => __( 'Update Category' ),
-		'add_new_item'      => __( 'Add New Category' ),
-		'new_item_name'     => __( 'New Category Name' ),
-		'menu_name'         => __( 'Categories' ),
-	);
-
-	$args = array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'Category' ),
-	);
-
-	register_taxonomy( 'category_courses', array( 'course' ), $args );
-
+    return $query;
 }
 
-/* ================================================== */
+function get_product_terms($tax, $filter_term, $filter_term_tax) {
+    $products = get_products($filter_term_tax, $filter_term, -1);
+    $terms = [];
 
-// Posts Meta Data
+    if ($products->have_posts()) {
+        while ($products->have_posts()) : $products->the_post();
+            global $post;
+            $term = get_the_terms($post->ID, $tax);
+            $name = $term[0]->name;
+            array_push($terms, $name);
+        endwhile;
+        wp_reset_postdata();
 
-function responsive_post_meta_data() {
-	printf( __( '%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
-		'meta-prep meta-prep-author posted',
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="timestamp updated" datetime="%3$s"><span class="day">%4$s</span> %5$s</time></a>',
-				 esc_url( get_permalink() ),
-				 esc_attr( get_the_title() ),
-				 esc_html( get_the_date('c')),
-				 esc_html( get_the_date('d') ),
-				 esc_html( get_the_date('M Y') )
-		),
-		'byline',
-		sprintf( '',
-				 get_author_posts_url( get_the_author_meta( 'ID' ) ),
-				 sprintf( esc_attr__( 'View all posts by %s', 'responsive' ), get_the_author() ),
-				 esc_attr( get_the_author() )
-		)
-	);
+        return array_unique($terms);
+    } else {
+        return;
+    }
 }
 
-/* ================================================== */
-
-// Numberic Nav for Posts Pages
-
-function numeric_posts_nav() {
-
-	if( is_singular() )
-		return;
-
-	global $wp_query;
-
-	/** Stop execution if there's only 1 page */
-	if( $wp_query->max_num_pages <= 1 )
-		return;
-
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max   = intval( $wp_query->max_num_pages );
-
-	/**	Add current page to the array */
-	if ( $paged >= 1 )
-		$links[] = $paged;
-
-	/**	Add the pages around the current page to the array */
-	if ( $paged >= 3 ) {
-		$links[] = $paged - 1;
-		$links[] = $paged - 2;
-	}
-
-	if ( ( $paged + 2 ) <= $max ) {
-		$links[] = $paged + 2;
-		$links[] = $paged + 1;
-	}
-
-	echo '<div class="navigation"><ul>' . "\n";
-
-	/**	Link to first page, plus ellipses if necessary */
-	if ( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' class="active"' : '';
-
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
-
-		if ( ! in_array( 2, $links ) )
-			echo '<li>…</li>';
-	}
-
-	/**	Link to current page, plus 2 pages in either direction if necessary */
-	sort( $links );
-	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-	}
-
-	/**	Link to last page, plus ellipses if necessary */
-	if ( ! in_array( $max, $links ) ) {
-		if ( ! in_array( $max - 1, $links ) )
-			echo '<li>…</li>' . "\n";
-
-		$class = $paged == $max ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-	}
-
-	echo '</ul></div>' . "\n";
-
+function get_first_product($tax, $term) {
+    return get_products($tax, $term, 1);
 }
 
-/* ================================================== */
+function get_term_children_num($tax, $term) {
+    $products = get_products($tax, $term, -1);
 
-// Featured Post
-
-function quick_info_shorty( $atts ) {
-    extract( shortcode_atts( array(
-        'id' => 'featured-course'      // Add the *default category id
-    ), $atts ) );
-
-    $posts = get_posts( array(
-        'posts_per_page' 	=> 1,
-        'post_status'    	=> 'publish',
-        'post_type'			=> 'course',
-        'taxonomy'			=> $id
-    ) );
-
-    $return = '';
-    $return .= '<div class="featured-course">';
-
-    foreach ( $posts as $post ) {
-
-        $permalink 		= get_permalink($post->ID);
-        $thumb 			= get_post_thumbnail_id($post->ID);
-		$img_url 		= wp_get_attachment_url( $thumb,'full');
-		$content 		= get_the_excerpt($post->ID);
-		$enroll 		= get_post_meta($post->ID, 'Enroll Now', true);
-		$start 			= get_post_meta($post->ID, 'Course Start', true);
-		$length 		= get_post_meta($post->ID, 'Course Length', true);
-		$time 			= get_post_meta($post->ID, 'Time Requirement', true);
-
-        $return .= '<div class="content"><h6>' . do_shortcode('[listfeatured orderby=count]') . '</h6>';
-        $return .= '<h4><a class="item" href="' . $permalink . '">' . apply_filters( 'the_title', $post->post_title ) . '</a></h4>';
-        $return .= '<div class="divider"></div>';
-        $return .= '<p class="excerpt">' . $content . '</p>';
-        $return .= '<a class="button green large enroll" href="' . $enroll . '">Enroll Now</a></div>';
-        $return .= '<div class="thumbnail"><a class="item" href="' . $permalink . '"><img src="' . $img_url . '" ></a>';
-        $return .= '<div class="info start"><span>Class Start:</span>' . $start . '</div>'; 
-        $return .= '<div class="info length"><span>Course Length:</span>' . $length . '</div>'; 
-        $return .= '<div class="info time"><span>Required:</span>' . $time . ' HRS Per Week</div>'; 
-    } 
-
-	$return .= '</div></div>';
-	return $return;
+    return $products->post_count;
 }
-add_shortcode( 'featured_course', 'quick_info_shorty' ); 
-
-
-/* ================================================== */
-
-// Featured Posts (Homepage)
-
-function quick_info_featured( $atts ) {
-    extract( shortcode_atts( array(
-        'id' => 'featured-course'      // Add the *default category id
-    ), $atts ) );
-
-    $posts = get_posts( array(
-        'posts_per_page' 	=> 4,
-        'post_status'    	=> 'publish',
-        'post_type'			=> 'course',
-        'taxonomy'			=> $id
-    ) );
-
-    $return = '';
-
-    foreach ( $posts as $post ) {
-
-        $permalink 		= get_permalink($post->ID);
-        $thumb 			= get_post_thumbnail_id($post->ID);
-		$img_url 		= wp_get_attachment_url( $thumb,'full');
-
-
-        $return .= '<div class="su-column su-column-size-1-4"><div class="su-column-inner su-clearfix">';
-        $return .= '<a class="item" href="' . $permalink . '"><img src="' . $img_url . '" >';
-        //$return .= '<h6>' . $category . '</h6>';
-        $return .= '<h4>' . apply_filters( 'the_title', $post->post_title ) . '</h4>';
-        $return .= '<p class="learn"><i class="fa fa-file-text-o"></i> Learn More</p></a>';
-        $return .= '</div></div>';
-    } 
-
-	return $return;
-}
-add_shortcode( 'featured_course_carousel', 'quick_info_featured' ); 
-
-// Widgets
-
-// Creating the widget 
-class rol_widget extends WP_Widget {
-
-function __construct() {
-parent::__construct(
-// Base ID of your widget
-'rol_widget', 
-
-// Widget name will appear in UI
-__('Rice Online Widget', 'rol_widget_domain'), 
-
-// Widget description
-array( 'description' => __( 'Rice Online Learning Related Courses', 'rol_widget_domain' ), ) 
-);
-}
-
-// Creating widget front-end
-// This is where the action happens
-public function widget( $args, $instance ) {
-	$title = apply_filters( 'widget_title', $instance['title'] );
-	// before and after widget arguments are defined by themes
-	echo $args['before_widget'];
-	if ( ! empty( $title ) )
-	echo $args['before_title'] . $title . $args['after_title'];
-
-	// This is where you run the code and display the output
-
-	$posts = get_posts( array(
-	    'posts_per_page' 	=> 4,
-	    'post_status'    	=> 'publish',
-	    'post_type'			=> 'course',
-	    'taxonomy'			=> 'field-of-study'
-	) );
-
-	$return = '';
-
-	foreach ( $posts as $post ) {
-
-	    $permalink 		= get_permalink($post->ID);
-	    $thumb 			= get_post_thumbnail_id($post->ID);
-		$img_url 		= wp_get_attachment_url( $thumb,'full');
-
-
-	    $return .= '<div class="su-column su-column-size-1-4"><div class="su-column-inner su-clearfix">';
-	    $return .= '<a class="item" href="' . $permalink . '"><img src="' . $img_url . '" >';
-	    //$return .= '<h6>' . $category . '</h6>';
-	    $return .= '<h4>' . apply_filters( 'the_title', $post->post_title ) . '</h4>';
-	    $return .= '<p class="learn"><i class="fa fa-file-text-o"></i> Learn More</p></a>';
-	    $return .= '</div></div>';
-	} 
-
-	echo($return);
-
-	echo __( $output, 'rol_widget_domain' );
-	echo $args['after_widget'];
-}
-		
-// Widget Backend 
-public function form( $instance ) {
-	if ( isset( $instance[ 'title' ] ) ) {
-		$title = $instance[ 'title' ];
-	}
-	else {
-		$title = __( 'New title', 'rol_widget_domain' );
-	}
-	// Widget admin form
-	?>
-	<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-	</p>
-	<?php 
-}
-	
-// Updating widget replacing old instances with new
-public function update( $new_instance, $old_instance ) {
-	$instance = array();
-	$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-	return $instance;
-}
-} // Class rol_widget ends here
-
-// Register and load the widget
-function wpb_load_widget() {
-	register_widget( 'rol_widget' );
-}
-add_action( 'widgets_init', 'wpb_load_widget' );
-
 ?>

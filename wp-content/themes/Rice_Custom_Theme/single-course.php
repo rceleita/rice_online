@@ -34,6 +34,12 @@ get_header(); ?>
 	$certificate	= get_post_meta(get_the_ID(), 'Certificate', true);
 	$tuition		= get_post_meta(get_the_ID(), 'Tuition', true);
 
+	if($start != ''){
+		$start 		= date("M j, Y", strtotime($start));
+
+		//return $start;
+	}
+
 ?>
 
 	<div id="content-header" style="background-image: url(<?php echo($img_url); ?>);">
@@ -42,11 +48,11 @@ get_header(); ?>
 	</div>
 	<div id="course-info">
 		<ul>
-			<li><span>Duration</span><?php echo($length); ?></li>
+			<li><span>Course Start</span><?php echo($start); ?></li>
 			<li><span>Professor</span><?php echo($profname); ?></li>
 			<li><span>Workload</span><?php echo($time); ?> Hours</li>
 			<li><span>Certificate Offered</span><?php echo($certificate) ?></li>
-			<li><span>Tuition</span><?php echo($tuition); ?></li>
+			<li><span>Tuition</span><?php echo('$' . $tuition); ?></li>
 		</ul>
 	</div>
 

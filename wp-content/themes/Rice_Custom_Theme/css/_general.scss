@@ -5,6 +5,13 @@
 body {
 	@include bgd-img(2016, '08', bgd_body, jpg, 0, 20%, no-repeat, transparent);
 	background-size: cover;
+
+	&.page-template-blog-courses {
+
+		main#main {
+			width: 100%;
+		}
+	}
 }
 
 #header {
@@ -40,7 +47,7 @@ body {
 }
 
 #container {
-	background-color: $white;
+	background-color: rgba(255,255,255,.5);
 }
 
 #main {

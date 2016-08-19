@@ -55,6 +55,11 @@ a.green {
 .info {
   color: white; }
 
+.courses article {
+  background-color: white; }
+  .courses article .course-title p {
+    color: #1e3769; }
+
 #footer {
   background-color: #ececec;
   margin-bottom: 40px; }
@@ -121,6 +126,8 @@ h6 {
 body {
   background: url("/rice_online/wp-content/uploads/2016/08/bgd_body.jpg") 0 20% no-repeat transparent;
   background-size: cover; }
+  body.page-template-blog-courses main#main {
+    width: 100%; }
 
 #header {
   position: fixed;
@@ -138,7 +145,7 @@ body {
         font-size: 11px; }
 
 #container {
-  background-color: white; }
+  background-color: rgba(255, 255, 255, 0.5); }
 
 #main article {
   border-bottom: 0 none; }
@@ -472,6 +479,60 @@ video {
 /* =============================================
 	INTERNAL PAGES
 ============================================= */
+/* COURSE CATALOG */
+.archive .content-area .sorting-table,
+.archive .content-area .courses {
+  display: inline-block; }
+.archive .content-area .sorting-table {
+  margin-right: 2%;
+  vertical-align: top;
+  width: 23%; }
+.archive .content-area .courses {
+  width: 74%; }
+  .archive .content-area .courses article {
+    box-shadow: 0 0 10px #1e3769;
+    display: inline-block;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    padding-bottom: 0 !important;
+    position: relative;
+    width: 31%; }
+    .archive .content-area .courses article .course-link {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 99; }
+      .archive .content-area .courses article .course-link:hover + .entry-content .course-title::before {
+        top: -20px; }
+    .archive .content-area .courses article .course-title {
+      padding: 40px 20px 20px;
+      position: relative; }
+      .archive .content-area .courses article .course-title::before {
+        background: white;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        content: '';
+        height: 40px;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        transition: top 0.3s;
+        width: 100%; }
+      .archive .content-area .courses article .course-title h4 {
+        margin-bottom: 1.5em;
+        text-transform: none; }
+      .archive .content-area .courses article .course-title p {
+        font-size: .8em;
+        font-weight: bold;
+        line-height: 1.8em;
+        margin-bottom: 0;
+        text-transform: uppercase; }
+        .archive .content-area .courses article .course-title p i {
+          font-size: 1.8em;
+          margin-right: 15px; }
+
 /* =============================================
 	SIDEBAR
 ============================================= */

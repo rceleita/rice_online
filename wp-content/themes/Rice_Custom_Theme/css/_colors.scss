@@ -103,6 +103,20 @@ a {
 	color: $white;
 }
 
+.courses {
+
+	article  {
+		background-color: $white;
+
+		.course-title {
+
+			p {
+				color: $dark-blue;
+			}
+		}
+	}
+}
+
 #footer {
 	background-color: $cream-color;
 	margin-bottom: 40px;

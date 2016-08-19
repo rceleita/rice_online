@@ -1,0 +1,90 @@
+/* COURSE CATALOG */
+
+.archive {
+
+	.content-area {
+
+		.sorting-table,
+		.courses {
+			display: inline-block;
+		}
+
+		.sorting-table {
+			margin-right: 2%;
+			vertical-align: top;
+			width: 23%;
+		}
+
+		.courses {
+			width: 74%;
+
+			article {
+				box-shadow: 0 0 10px $dark-blue;
+				display: inline-block;
+				margin-bottom: 2%;
+				margin-right: 2%;
+				padding-bottom: 0 !important;
+				position: relative;
+				width: 31%;
+
+				.course-link {
+					height: 100%;
+					position: absolute;
+					width: 100%;
+					z-index: 99;
+
+					&:hover {
+
+						+.entry-content {
+
+							.course-title {
+
+								&::before {
+									top: -20px;
+								}
+							}
+						}
+					}
+				}
+
+				.course-title {
+					padding: 40px 20px 20px;
+					position: relative;
+
+					&::before {
+						background: $white;
+						border-top-right-radius: 50%;
+						border-top-left-radius: 50%;
+						content: '';
+						height: 40px;
+						left: 50%;
+						position: absolute;
+						top: 0;
+						-webkit-transform: translateX(-50%);
+						transform: translateX(-50%);
+						@include transition(top, .3s);
+						width: 100%;
+					}
+
+					h4 {
+						margin-bottom: 1.5em;
+						text-transform: none;
+					}
+
+					p {
+						font-size: .8em;
+						font-weight: bold;
+						line-height: 1.8em;
+						margin-bottom: 0;
+						text-transform: uppercase;
+
+						i {
+							font-size: 1.8em;
+							margin-right: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
