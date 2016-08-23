@@ -1,3 +1,27 @@
+/* GENERAL */
+
+.archive {
+
+	#wrapper { /* FF3.6-15 */
+		background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 42%);
+		background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 41%,rgba(255,255,255,0) 42%);
+		background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 41%,rgba(255,255,255,0) 42%);
+	}
+}
+
+#title {
+	margin-bottom: 4em;
+
+	h1 {
+		text-transform: none;
+	}
+}
+
+main {
+	margin-bottom: 4em;
+	padding: 0 !important;
+}
+
 /* COURSE CATALOG */
 
 .archive {
@@ -10,9 +34,70 @@
 		}
 
 		.sorting-table {
+			border-bottom: 1px solid $light-gray;
 			margin-right: 2%;
 			vertical-align: top;
 			width: 23%;
+
+			h3 {
+				border-top: 1px solid $light-gray;
+				margin: 0;
+				padding: 30px 0 30px 20px;
+				position: relative;
+				text-transform: none;
+				transition: all .3s;
+				
+				&:hover {
+					background-color: rgba(255, 255, 255, .6);
+					cursor: pointer;
+				}
+
+				&:after {
+					content: '\f196';
+					font-size: .8em;
+					font-weight: 100;		
+					position: absolute;
+					right: 20px;
+					top: 50%;
+					transform: translate(0%, -50%);
+				}
+
+				&.active {
+
+					&:after {
+						content:'\f147';
+					}
+				}
+			}
+
+			nav {
+				max-height: 0;
+				overflow: scroll;
+				transition: .3s ease-in-out;
+
+				&.show {
+					max-height: 300px;				
+				}
+
+				ul {
+					list-style: none;
+					margin: 20px 0 0;
+					padding: 0 0 20px 20px;
+
+					li {
+						display: block;
+
+						a {
+							display: block;
+							font-size: 1.25em;
+
+							&:hover {
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
 		}
 
 		.courses {
@@ -48,6 +133,9 @@
 				}
 
 				.course-title {
+					border-bottom: 1px solid $white;
+					border-left: 1px solid $white;
+					border-right: 1px solid $white;
 					padding: 40px 20px 20px;
 					position: relative;
 
@@ -84,6 +172,138 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+/* SINGLE COURSE */
+
+.single-course {
+
+	#content-header {
+		background-size: cover;
+		background-position: 50% 50%;
+		box-shadow: 0 0 20px $black;
+		min-height: 250px;
+		padding: 80px 0;
+		text-align: center;
+
+		h2 {
+			margin-bottom: 1.5em;
+		}
+	}
+
+	#course-info {
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin-right: 5%;
+				min-width: 15%;
+				padding-left: 50px;
+				position: relative;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+
+				span {
+					display: block;
+				}
+
+				&::before {
+					border-right: 1px solid $white;
+					display: inline-block;
+					font-size: 2.5em;
+					padding-right: 10px;
+					position: absolute;
+					left: 0;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+  		 					transform: translateY(-50%);
+				}
+
+				&.start {
+
+					&::before {
+						content: '\f017';
+					}
+				}
+
+				&.professor {
+
+					&::before {
+						content: '\f007';
+					}
+				}
+
+				&.workload {
+
+					&::before {
+						content: '\f040';
+					}
+				}
+
+				&.certificate {
+
+					&::before {
+						content: '\f0a3';
+					}
+				}
+
+				&.tuition {
+
+					&::before {
+						content: url(/rice_online/wp-content/uploads/2016/08/icon_owl.png);
+					}
+				}
+			}
+		}
+	}
+
+	#professor {
+		border-bottom: 1px solid $white;
+		border-top: 1px solid $white;
+		margin-top: 30px;
+		padding: 30px 0;
+
+		.headshot,
+		.professorinfo {
+			float: left;
+		}
+
+		.headshot {
+			position: relative;
+			width: 20%;
+
+			img {
+				border-radius: 50%;
+			}
+		}
+
+		.professorinfo {
+			width: 80%;
+		}
+	}
+
+	.enroll-container {
+		padding: 40px 0;
+		text-align: center;
+	}
+
+	.sharify-container {
+
+		ul {
+			text-align: center;
+
+			li {
+				display: inline-block;
+				float: none;
 			}
 		}
 	}

@@ -20,12 +20,22 @@ body,
 .content-area {
   background-color: transparent !important; }
 
-header {
+header,
+.gallery-caption {
   background-color: white; }
+
+h1 {
+  color: #1e3769; }
+
+#content-header h2 {
+  color: white; }
+
+.sorting-table h3, .widget-title h3 {
+  color: #1e3769; }
 
 .catalog h4 {
   color: white; }
-.video-bucket h4 {
+#professor h4, .video-bucket h4 {
   color: #1e3769; }
 .content h4 a {
   color: white; }
@@ -38,19 +48,36 @@ header {
   color: #5690dd; }
 .lifelong h6 {
   color: #77bbc6; }
-.catalog h6 {
-  color: #999999; }
+.catalog h6 a {
+  color: #999999 !important; }
 .content h6 a {
   color: #527bce; }
 
 .home-content p, .content p {
   color: white; }
 
+#course-info li::before {
+  color: #1e3769; }
+
 .catalog a, .imgdisplay a {
   color: white !important; }
+.taxonomy-nav a {
+  color: black; }
+  .taxonomy-nav a:hover {
+    color: #5690dd; }
 a.green {
   background-color: #86c03f;
   color: white; }
+  a.green:hover {
+    background-color: #6b9a32; }
+a.red {
+  background-color: #d23a52;
+  color: white; }
+  a.red:hover {
+    background-color: #b1283e; }
+
+#course-info span {
+  color: #1e3769; }
 
 .info {
   color: white; }
@@ -71,12 +98,13 @@ h1, h2, h3, h4, h5, h6, p, a, li, span {
   font-family: "neuzeit-grotesk", Helvetica, Arial, sans-serif;
   font-weight: 100; }
 
-h1, h2, h3, h4, h5, h6 {
-  text-transform: uppercase; }
-
+#professor h4 {
+  font-size: 1.5em; }
 .catalog h4, .content h4 {
   font-size: 2em;
   letter-spacing: 1.2px; }
+.main-buckets h4 {
+  font-size: 2.5em; }
 
 h6 {
   font-weight: 600; }
@@ -97,15 +125,23 @@ h6 {
 .home-content p {
   font-family: "garamond-premier-pro", Garamond, "Times New Roman", serif; }
 
-.main-buckets h4 {
-  font-size: 2.5em; }
+#course-info li::before {
+  font: normal normal normal 14px/1 FontAwesome; }
 
-.catalog a {
+.catalog ul a {
+  text-transform: uppercase; }
+
+#course-info span {
+  font-size: .8em;
+  font-weight: bold;
   text-transform: uppercase; }
 
 .button::before,
 .info::before,
 .tweettext::before {
+  font: normal normal normal 14px/1 FontAwesome; }
+
+.accordion::after {
   font: normal normal normal 14px/1 FontAwesome; }
 
 /* =============================================
@@ -114,7 +150,7 @@ h6 {
 #header img {
   transition: all 0.3s; }
 
-#main-menu-container, #main-menu-container a, a.button {
+#main-menu-container, #main-menu-container a, a.button, .taxonomy-nav a {
   transition: all 0.2s; }
 
 /* =============================================
@@ -146,6 +182,9 @@ body {
 
 #container {
   background-color: rgba(255, 255, 255, 0.5); }
+  #container #course-info {
+    margin: 0 auto;
+    padding: 30px 15px; }
 
 #main article {
   border-bottom: 0 none; }
@@ -209,14 +248,10 @@ video {
 
 /* Buttons */
 .button {
-  border: 2px solid white;
-  border-radius: 8px;
   display: inline-block;
   position: relative;
   text-align: center;
   text-transform: uppercase; }
-  .button:hover {
-    background-color: #6b9a32; }
   .button:active, .button:hover, .button:visited {
     text-decoration: none !important; }
   .button.large {
@@ -226,6 +261,12 @@ video {
     width: 100%; }
     .button.large::before {
       font-size: 2.5em; }
+  .button.standalone {
+    padding: 10px 25px;
+    width: 200px; }
+    .button.standalone::before {
+      font-size: 1.5em;
+      font-weight: 100; }
   .button.enroll::before {
     content: "\f044"; }
   .button.play::before {
@@ -236,6 +277,24 @@ video {
   .button i {
     font-size: 2.5em;
     font-weight: bold; }
+
+/* SIDEBAR */
+.widget-wrapper {
+  padding-top: 0; }
+
+.widget-title {
+  border-bottom-color: white !important;
+  padding-top: 0; }
+  .widget-title h3 {
+    margin-top: 0; }
+
+.gallery-item {
+  margin-bottom: 40px; }
+  .gallery-item .gallery-caption {
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 30px 20px; }
 
 /* =============================================
 	HOMEPAGE
@@ -284,6 +343,8 @@ video {
         display: block;
         padding: 40px 20px;
         position: relative; }
+        .home .main-buckets .su-column .su-column-inner .content-bucket div:first-of-type h4 {
+          text-transform: uppercase; }
         .home .main-buckets .su-column .su-column-inner .content-bucket div:first-of-type h6 {
           margin-top: 0; }
         .home .main-buckets .su-column .su-column-inner .content-bucket div:first-of-type::before {
@@ -319,6 +380,9 @@ video {
   height: 400px;
   max-height: 400px;
   padding: 20px 30px 20px 20px; }
+  .home .featured .catalog h4,
+  .home .featured .content h4 {
+    text-transform: uppercase; }
 .home .featured .catalog {
   background: url("/rice_online/wp-content/uploads/2016/08/bgd_catalog.png") 0 0 no-repeat transparent;
   background-size: cover;
@@ -415,7 +479,8 @@ video {
     width: 33%; }
     .home .video .video-bucket .su-column-inner h4 {
       font-size: 2em;
-      line-height: 1.3em; }
+      line-height: 1.3em;
+      text-transform: uppercase; }
     .home .video .video-bucket .su-column-inner .su-divider {
       width: 70%; }
     .home .video .video-bucket .su-column-inner p {
@@ -428,7 +493,8 @@ video {
 .home .featured-carousel h2 {
   font-size: 4em;
   margin-bottom: 30px;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase; }
 .home .featured-carousel .su-column {
   background: url("/rice_online/wp-content/uploads/2016/08/bgd_bucket.png") 100% 100% no-repeat transparent; }
   .home .featured-carousel .su-column:first-of-type {
@@ -446,7 +512,8 @@ video {
     font-size: 2em;
     margin: 0;
     padding: 40px 20px 15px;
-    position: relative; }
+    position: relative;
+    text-transform: uppercase; }
     .home .featured-carousel .su-column h4::before {
       background: inherit;
       border-top-right-radius: 50%;
@@ -479,14 +546,68 @@ video {
 /* =============================================
 	INTERNAL PAGES
 ============================================= */
+/* GENERAL */
+.archive #wrapper {
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(left, white 0%, white 41%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, white 0%, white 41%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, white 0%, white 41%, rgba(255, 255, 255, 0) 42%); }
+
+#title {
+  margin-bottom: 4em; }
+  #title h1 {
+    text-transform: none; }
+
+main {
+  margin-bottom: 4em;
+  padding: 0 !important; }
+
 /* COURSE CATALOG */
 .archive .content-area .sorting-table,
 .archive .content-area .courses {
   display: inline-block; }
 .archive .content-area .sorting-table {
+  border-bottom: 1px solid #ccc;
   margin-right: 2%;
   vertical-align: top;
   width: 23%; }
+  .archive .content-area .sorting-table h3 {
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 30px 0 30px 20px;
+    position: relative;
+    text-transform: none;
+    transition: all .3s; }
+    .archive .content-area .sorting-table h3:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+      cursor: pointer; }
+    .archive .content-area .sorting-table h3:after {
+      content: '\f196';
+      font-size: .8em;
+      font-weight: 100;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translate(0%, -50%); }
+    .archive .content-area .sorting-table h3.active:after {
+      content: '\f147'; }
+  .archive .content-area .sorting-table nav {
+    max-height: 0;
+    overflow: scroll;
+    transition: .3s ease-in-out; }
+    .archive .content-area .sorting-table nav.show {
+      max-height: 300px; }
+    .archive .content-area .sorting-table nav ul {
+      list-style: none;
+      margin: 20px 0 0;
+      padding: 0 0 20px 20px; }
+      .archive .content-area .sorting-table nav ul li {
+        display: block; }
+        .archive .content-area .sorting-table nav ul li a {
+          display: block;
+          font-size: 1.25em; }
+          .archive .content-area .sorting-table nav ul li a:hover {
+            text-decoration: none; }
 .archive .content-area .courses {
   width: 74%; }
   .archive .content-area .courses article {
@@ -505,6 +626,9 @@ video {
       .archive .content-area .courses article .course-link:hover + .entry-content .course-title::before {
         top: -20px; }
     .archive .content-area .courses article .course-title {
+      border-bottom: 1px solid white;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
       padding: 40px 20px 20px;
       position: relative; }
       .archive .content-area .courses article .course-title::before {
@@ -533,6 +657,74 @@ video {
           font-size: 1.8em;
           margin-right: 15px; }
 
+/* SINGLE COURSE */
+.single-course #content-header {
+  background-size: cover;
+  background-position: 50% 50%;
+  box-shadow: 0 0 20px black;
+  min-height: 250px;
+  padding: 80px 0;
+  text-align: center; }
+  .single-course #content-header h2 {
+    margin-bottom: 1.5em; }
+.single-course #course-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .single-course #course-info ul li {
+    display: inline-block;
+    margin-right: 5%;
+    min-width: 15%;
+    padding-left: 50px;
+    position: relative; }
+    .single-course #course-info ul li:last-of-type {
+      margin-right: 0; }
+    .single-course #course-info ul li span {
+      display: block; }
+    .single-course #course-info ul li::before {
+      border-right: 1px solid white;
+      display: inline-block;
+      font-size: 2.5em;
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .single-course #course-info ul li.start::before {
+      content: '\f017'; }
+    .single-course #course-info ul li.professor::before {
+      content: '\f007'; }
+    .single-course #course-info ul li.workload::before {
+      content: '\f040'; }
+    .single-course #course-info ul li.certificate::before {
+      content: '\f0a3'; }
+    .single-course #course-info ul li.tuition::before {
+      content: url(/rice_online/wp-content/uploads/2016/08/icon_owl.png); }
+.single-course #professor {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  margin-top: 30px;
+  padding: 30px 0; }
+  .single-course #professor .headshot,
+  .single-course #professor .professorinfo {
+    float: left; }
+  .single-course #professor .headshot {
+    position: relative;
+    width: 20%; }
+    .single-course #professor .headshot img {
+      border-radius: 50%; }
+  .single-course #professor .professorinfo {
+    width: 80%; }
+.single-course .enroll-container {
+  padding: 40px 0;
+  text-align: center; }
+.single-course .sharify-container ul {
+  text-align: center; }
+  .single-course .sharify-container ul li {
+    display: inline-block;
+    float: none; }
+
 /* =============================================
 	SIDEBAR
 ============================================= */
@@ -556,5 +748,8 @@ video {
 /* =============================================
 	RESPONSIVE
 ============================================= */
+@media (min-width: 1200px) {
+  #course-info {
+    width: 1170px; } }
 
 /*# sourceMappingURL=style.css.map */

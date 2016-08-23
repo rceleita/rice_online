@@ -48,6 +48,11 @@ body {
 
 #container {
 	background-color: rgba(255,255,255,.5);
+
+	#course-info {
+		margin: 0 auto;
+		padding: 30px 15px;
+	}
 }
 
 #main {
@@ -171,16 +176,10 @@ video {
 /* Buttons */
 
 .button {
-	border: 2px solid $white;
-	border-radius: 8px;
 	display: inline-block;
 	position: relative;
 	text-align: center;
 	text-transform: uppercase;
-
-	&:hover {
-		background-color: darken($green, 10%);
-	}
 
 	&:active,
 	&:hover,
@@ -196,6 +195,16 @@ video {
 
 		&::before {
 			font-size: 2.5em;
+		}
+	}
+
+	&.standalone {
+		padding: 10px 25px;
+		width: 200px;
+
+		&::before {
+			font-size: 1.5em;
+			font-weight: 100;
 		}
 	}
 
@@ -223,3 +232,30 @@ video {
 		font-weight: bold;
 	}
 }
+
+/* SIDEBAR */
+
+.widget-wrapper {
+	padding-top: 0;
+}
+
+.widget-title {
+	border-bottom-color: $white !important;
+	padding-top: 0;
+
+	h3 {
+		margin-top: 0;
+	}
+}
+
+.gallery-item {
+	margin-bottom: 40px;
+
+	.gallery-caption {
+		border-bottom: 1px solid $light-gray;
+		border-left: 1px solid $light-gray;
+		border-right: 1px solid $light-gray;
+		padding: 30px 20px;
+	}
+}
+

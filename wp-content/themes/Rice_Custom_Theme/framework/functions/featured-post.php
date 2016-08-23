@@ -28,6 +28,10 @@ function quick_info_shorty( $atts ) {
 		$length 		= get_post_meta($post->ID, 'Course Length', true);
 		$time 			= get_post_meta($post->ID, 'Time Requirement', true);
 
+        if($start != ''){
+            $start      = date("M j, Y", strtotime($start));
+        }
+
         $return .= '<div class="content"><h6>' . do_shortcode('[listfeatured orderby=count]') . '</h6>';
         $return .= '<h4><a class="item" href="' . $permalink . '">' . apply_filters( 'the_title', $post->post_title ) . '</a></h4>';
         $return .= '<div class="divider"></div>';

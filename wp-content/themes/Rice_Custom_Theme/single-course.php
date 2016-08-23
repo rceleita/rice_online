@@ -44,28 +44,24 @@ get_header(); ?>
 
 	<div id="content-header" style="background-image: url(<?php echo($img_url); ?>);">
 		<h2><?php echo(get_the_title()); ?></h2>
-		<p><a href="<?php echo($enroll); ?>" class="button enroll">Enroll Now</a></p>
+		<p><a href="<?php echo($enroll); ?>" class="button enroll standalone red">Enroll Now</a></p>
 	</div>
 	<div id="course-info">
 		<ul>
-			<li><span>Course Start</span><?php echo($start); ?></li>
-			<li><span>Professor</span><?php echo($profname); ?></li>
-			<li><span>Workload</span><?php echo($time); ?> Hours</li>
-			<li><span>Certificate Offered</span><?php echo($certificate) ?></li>
-			<li><span>Tuition</span><?php echo('$' . $tuition); ?></li>
+			<li class="start"><span>Course Start</span><?php echo($start); ?></li>
+			<li class="professor"><span>Professor</span><?php echo($profname); ?></li>
+			<li class="workload"><span>Workload</span><?php echo($time); ?> Hours</li>
+			<li class="certificate"><span>Certificate Offered</span><?php echo($certificate) ?></li>
+			<li class="tuition"><span>Tuition</span><?php echo('$' . $tuition); ?></li>
 		</ul>
 	</div>
 
 	<div id="content" class="content-area">
 			<main id="main" class="site-main" role="main">
-				<?php get_template_part( 'template-parts/loop-header' ); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'template-parts/content', 'course' ); ?>
-
-					<?php responsive_mobile_comments_before(); ?>
-					<?php responsive_mobile_comments_after(); ?>
+					<?php echo(the_content()); ?>
 
 				<?php endwhile; // end of the loop. ?>
 				
@@ -77,7 +73,9 @@ get_header(); ?>
 						<h4><?php echo($profname); ?></h4>
 						<p><?php echo($profbio); ?></p>
 					</div>
+					<div class="clearfix">&nbsp;</div>
 				</div>
+				<div class="enroll-container"><a href="<?php echo($enroll); ?>" class="button enroll standalone red">Enroll Now</a></div>
 
 			</main><!-- #main -->
 

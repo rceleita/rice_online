@@ -9,7 +9,8 @@ a {
 	
 	@at-root #main-menu-container,
 	#main-menu-container &,
-	&.button {
+	&.button,
+	.taxonomy-nav & {
 		@include transition(all, .2s);
 	}
 }

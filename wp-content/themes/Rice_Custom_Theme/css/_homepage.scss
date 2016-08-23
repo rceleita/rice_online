@@ -76,6 +76,10 @@
 							padding: 40px 20px;
 							position: relative;
 
+							h4 {
+								text-transform: uppercase;
+							}
+
 							h6 {
 								margin-top: 0;
 							}
@@ -137,6 +141,10 @@
 			height: 400px;
 			max-height: 400px;
 			padding: 20px 30px 20px 20px;
+
+			h4 {
+				text-transform: uppercase;
+			}
 		}
 
 		.catalog {
@@ -302,6 +310,7 @@
 				h4 {
 					font-size: 2em;
 					line-height: 1.3em;
+					text-transform: uppercase;
 				}
 
 				.su-divider {
@@ -330,6 +339,7 @@
 			font-size: 4em;
 			margin-bottom: 30px;
 			text-align: center;
+			text-transform: uppercase;
 		}
 
 		.su-column {
@@ -364,6 +374,7 @@
 				margin: 0;
 				padding: 40px 20px 15px;
 				position: relative;
+				text-transform: uppercase;
 
 				&::before {
 					background: inherit;

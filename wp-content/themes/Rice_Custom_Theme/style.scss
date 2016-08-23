@@ -13,10 +13,6 @@ Rice Online Learning Custom Theme, Copyright (C) 2016 Signet Interactive
 
 @import 'css/_mixins.scss';
 
-// VARIABLES
-
-@import 'css/_variables.scss';
-
 /* =============================================
 	COLORS
 ============================================= */
@@ -68,3 +64,5 @@ Rice Online Learning Custom Theme, Copyright (C) 2016 Signet Interactive
 /* =============================================
 	RESPONSIVE
 ============================================= */
+
+@import 'css/_responsive.scss';
