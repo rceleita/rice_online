@@ -59,7 +59,7 @@ h1 {
 #course-info li::before {
   color: #1e3769; }
 
-.catalog a, .imgdisplay a {
+.catalog a, .imgdisplay a, .ls-result-content a {
   color: white !important; }
 .taxonomy-nav a {
   color: black; }
@@ -75,6 +75,11 @@ a.red {
   color: white; }
   a.red:hover {
     background-color: #b1283e; }
+.ls-sec3-t5-c2 a {
+  color: #1e3769; }
+  .ls-sec3-t5-c2 a:hover {
+    color: #3561b8;
+    text-decoration: none; }
 
 #course-info span {
   color: #1e3769; }
@@ -86,6 +91,27 @@ a.red {
   background-color: white; }
   .courses article .course-title p {
     color: #1e3769; }
+
+.ls-search-box,
+.full-content {
+  background-color: rgba(255, 255, 255, 0.85) !important; }
+
+.ls-search-input::-webkit-input-placeholder {
+  color: #1e3769 !important; }
+.ls-search-input::-moz-placeholder {
+  color: #1e3769 !important; }
+.ls-search-input:-ms-input-placeholder {
+  color: #1e3769 !important; }
+.ls-search-input:-moz-placeholder {
+  color: #1e3769 !important; }
+
+.ls-result-content {
+  background-color: rgba(0, 0, 0, 0.5); }
+  .ls-result-content:hover {
+    background-color: rgba(0, 0, 0, 0.7); }
+
+.ls-search-btn i {
+  background-color: transparent !important; }
 
 #footer {
   background-color: #ececec;
@@ -153,6 +179,9 @@ h6 {
 #main-menu-container, #main-menu-container a, a.button, .taxonomy-nav a {
   transition: all 0.2s; }
 
+.ls-result-content {
+  transition: all 0.2s; }
+
 /* =============================================
 	GENERAL STYLES
 ============================================= */
@@ -188,6 +217,34 @@ body {
 
 #main article {
   border-bottom: 0 none; }
+#main .slimScrollBar {
+  display: none !important; }
+#main .pw_ls_loading {
+  min-height: 50px; }
+#main .ls-result-item {
+  padding: 0 !important;
+  position: relative; }
+  #main .ls-result-item .ls-result-content {
+    height: 100%;
+    left: 0;
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    width: 100%; }
+    #main .ls-result-item .ls-result-content h3 {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0; }
+      #main .ls-result-item .ls-result-content h3 a {
+        display: block;
+        height: 100%;
+        padding-top: 50%;
+        width: 100%; }
+#main .ls-sec3-t5-c2 li {
+  display: inline-block;
+  width: 48%; }
 
 #main-menu-container {
   position: fixed;
@@ -197,7 +254,7 @@ body {
   #main-menu-container #main-navigation #mega-menu-wrap-header-menu {
     background-color: transparent; }
   #main-menu-container #main-navigation .mega-menu {
-    float: right; }
+    text-align: center; }
     #main-menu-container #main-navigation .mega-menu li {
       margin-right: 60px; }
       #main-menu-container #main-navigation .mega-menu li a {

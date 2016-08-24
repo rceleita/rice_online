@@ -60,6 +60,53 @@ body {
 	article {
 		border-bottom: 0 none;
 	}
+
+	// SEARCH
+
+	.slimScrollBar {
+		display: none !important;
+	}
+
+	.pw_ls_loading {
+		min-height: 50px;
+	}
+
+	.ls-result-item {
+		padding: 0 !important;
+		position: relative;
+
+		.ls-result-content {
+			height: 100%;
+			left: 0;
+			margin-top: 0;
+			position: absolute;
+			top: 0;
+			transition: all .3s;
+			width: 100%;
+
+			h3 {
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+
+				a {
+					display: block;
+					height: 100%;
+					padding-top: 50%;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.ls-sec3-t5-c2 {
+
+		li {
+			display: inline-block;
+			width: 48%;
+		}
+	}
 }
 
 #main-menu-container {
@@ -75,7 +122,7 @@ body {
 		}
 
 		.mega-menu {
-			float: right;
+			text-align: center;
 
 			li {
 				margin-right: 60px;
