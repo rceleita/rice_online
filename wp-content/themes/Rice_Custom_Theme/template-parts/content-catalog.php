@@ -25,7 +25,25 @@ responsive_mobile_entry_before(); ?>
             	$course = new WP_Query( array( 'post_type' => 'course' ) );
                 if ($course->have_posts()) {
                     while (have_posts()) : the_post(); ?>
+
                     <article class="elr-col-lg-3 elr-col-md-3 elr-col-sm-6 product-archive-image-holder">
+
+                        <?php $terms = get_the_terms( get_the_ID(), 'category_courses' );
+                            if ( $terms && ! is_wp_error( $terms ) ) : 
+                                $subject_links = array();
+     
+                                foreach ( $terms as $term ) {
+                                    $subject_links[] = $term->name;
+                                }
+                             
+                                $course_tag = join( ", ", $subject_links );
+                                $course_class = strtolower(str_replace(' ', '_', $course_tag));
+                        ?>
+                            <span class="subject_tag <?php printf( esc_html( $course_class ) ); ?>">
+                                <?php printf( esc_html( $course_tag ) ); ?>
+                            </span>
+                        <?php endif; ?>
+
                     	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="course-link"></a>
                         <div class="entry-content">
 							<?php if ( has_post_thumbnail() ) : ?>

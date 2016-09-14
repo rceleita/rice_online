@@ -9,6 +9,10 @@
 
     $types = get_terms('category_courses');
 ?>
+<div class="course-search">
+    <?php echo do_shortcode('[pw-ajax-live-search id="91"]'); ?>
+</div>
+<h3 class="title">Refine</h3>
 <div class="course-filter course-filter-archive">
     <div>
         <h3 class="course-filter-heading accordion">Subject</h3>
@@ -29,11 +33,17 @@
         <?php elr_tax_nav_filter($wp_query, 'course', 'course_platform'); ?>
         <h3 class="course-filter-heading accordion">Status</h3>
         <?php elr_tax_nav_filter($wp_query, 'course', 'course_status'); ?>
+        <h3 class="course-filter-heading accordion">Credit</h3>
+        <?php elr_tax_nav_filter($wp_query, 'course', 'course_credit'); ?>
+        <h3 class="course-filter-heading accordion">Level</h3>
+        <?php elr_tax_nav_filter($wp_query, 'course', 'course_level'); ?>
+        <h3 class="course-filter-heading accordion">Engagement</h3>
+        <?php elr_tax_nav_filter($wp_query, 'course', 'course_engagement'); ?>
         <h3 class="course-filter-heading accordion">Archive</h3>
         <nav class="taxonomy-nav">
             <ul class="taxonomy-menu">
                 <?php $archive_courses = site_url() . '/course_status/past-course/'; ?>
-                <li><a href="<?php echo($archive_courses); ?>">All</a></li>
+                <li><a href="<?php echo($archive_courses); ?>">Past Courses</a></li>
             </ul>
         </nav>
     </div>

@@ -4,7 +4,7 @@
 
 function quick_info_shorty( $atts ) {
     extract( shortcode_atts( array(
-        'id' => 'course_featured'      // Add the *default category id
+        'id' => 'course_featured'
     ), $atts ) );
 
     $posts = get_posts( array(
@@ -55,7 +55,7 @@ add_shortcode( 'featured_course', 'quick_info_shorty' );
 
 function quick_info_featured( $atts ) {
     extract( shortcode_atts( array(
-        'id' => 'course_featured'      // Add the *default category id
+        'id' => 'course_featured'
     ), $atts ) );
 
     $posts = get_posts( array(
@@ -72,7 +72,6 @@ function quick_info_featured( $atts ) {
         $permalink 		= get_permalink($post->ID);
         $thumb 			= get_post_thumbnail_id($post->ID);
 		$img_url 		= wp_get_attachment_url( $thumb,'full');
-
 
         $return .= '<div class="su-column su-column-size-1-4"><div class="su-column-inner su-clearfix">';
         $return .= '<a class="item" href="' . $permalink . '"><img src="' . $img_url . '" >';

@@ -10,7 +10,8 @@ a {
 	@at-root #main-menu-container,
 	#main-menu-container &,
 	&.button,
-	.taxonomy-nav & {
+	.taxonomy-nav &,
+	.sidebar-search .ls.result-content & {
 		@include transition(all, .2s);
 	}
 }

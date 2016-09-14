@@ -1,4 +1,4 @@
-/* GENERAL */
+/* INTERNAL PAGES */
 
 .archive {
 
@@ -39,33 +39,40 @@ main {
 			vertical-align: top;
 			width: 23%;
 
-			h3 {
-				border-top: 1px solid $light-gray;
-				margin: 0;
-				padding: 30px 0 30px 20px;
-				position: relative;
-				text-transform: none;
-				transition: all .3s;
-				
-				&:hover {
-					background-color: rgba(255, 255, 255, .6);
-					cursor: pointer;
-				}
+			.title {
+				margin: 40px 0 20px 10px;
+			}
 
-				&:after {
-					content: '\f196';
-					font-size: .8em;
-					font-weight: 100;		
-					position: absolute;
-					right: 20px;
-					top: 50%;
-					transform: translate(0%, -50%);
-				}
+			.course-filter {
 
-				&.active {
+				h3 {
+					border-top: 1px solid $light-gray;
+					margin: 0;
+					padding: 10px 0 10px 10px;
+					position: relative;
+					text-transform: none;
+					transition: all .3s;
+					
+					&:hover {
+						background-color: #f5f5f5;
+						cursor: pointer;
+					}
 
 					&:after {
-						content:'\f147';
+						content: '\f196';
+						font-size: .8em;
+						font-weight: 100;		
+						position: absolute;
+						right: 20px;
+						top: 50%;
+						transform: translate(0%, -50%);
+					}
+
+					&.active {
+
+						&:after {
+							content:'\f147';
+						}
 					}
 				}
 			}
@@ -81,8 +88,8 @@ main {
 
 				ul {
 					list-style: none;
-					margin: 20px 0 0;
-					padding: 0 0 20px 20px;
+					margin: 10px 0 0;
+					padding: 0 0 10px 20px;
 
 					li {
 						display: block;
@@ -112,6 +119,19 @@ main {
 				position: relative;
 				width: 31%;
 
+				.subject_tag {
+					background-color: $red;
+					color: $white;
+					font-size: 10px;
+					font-weight: bold;
+					left: 0;
+					max-width: 50%;
+					padding: 10px;
+					position: absolute;
+					text-transform: uppercase;
+					top: 20px;
+				}
+
 				.course-link {
 					height: 100%;
 					position: absolute;
@@ -133,9 +153,6 @@ main {
 				}
 
 				.course-title {
-					border-bottom: 1px solid $white;
-					border-left: 1px solid $white;
-					border-right: 1px solid $white;
 					padding: 40px 20px 20px;
 					position: relative;
 
@@ -145,11 +162,9 @@ main {
 						border-top-left-radius: 50%;
 						content: '';
 						height: 40px;
-						left: 50%;
+						left: 0;
 						position: absolute;
 						top: 0;
-						-webkit-transform: translateX(-50%);
-						transform: translateX(-50%);
 						@include transition(top, .3s);
 						width: 100%;
 					}
@@ -180,6 +195,14 @@ main {
 /* SINGLE COURSE */
 
 .single-course {
+
+	.breadcrumb-list {
+		margin-bottom: 1.5em;
+
+		+ p {
+			font-size: 1.6em;
+		}
+	}
 
 	#content-header {
 		background-size: cover;
@@ -305,6 +328,100 @@ main {
 				display: inline-block;
 				float: none;
 			}
+		}
+	}
+}
+
+/* FAQ */
+
+.su-tabs {
+	background-color: transparent !important;
+	border-radius: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	.su-tabs-nav {
+
+		span {
+			border-radius: 0 !important;
+			color: $dark-blue;
+			display: inline-block;
+			font-weight: bold;
+			height: 160px;
+			line-height: 245px;
+			margin: 0 !important;
+			position: relative;
+			text-align: center;
+			text-transform: uppercase;
+			transition: all .2s;
+			width: 20%;
+
+			&.su-tabs-current,
+			&:hover {
+				background: rgba(255,255,255,.5) !important;
+				
+				&::before {
+					background-position: -100px;
+				}
+			}
+
+			&.professors {
+
+				&::before {
+					content: '\f007';
+				}
+			}
+
+			&.registration {
+
+				&::before {
+					content:'\f044';
+					padding-left: 10px;
+				}
+			}
+
+			&.access {
+
+				&::before {
+					content:'\f02d';
+				}
+			}
+
+			&.lifelong {
+
+				&::before {
+					content:'\f19d';
+				}
+			}
+
+			&.demand {
+
+				&::before {
+					content:'\f04b';
+					padding-left: 15px;
+				}
+			}
+
+			&::before {
+				@include gradient-overlay(top, 37, 74, 132, 1, 77, 116, 173, 1);
+				background-size: 1px 200px;
+				border-radius: 50%;
+				content: '';
+				display: block;
+				height: 100px;
+				position: absolute;
+				top: 15px;
+				transform: translate(50%, 0);
+				transition: background .5s ease-out;
+				width: 100px;
+			}
+		}
+	}
+
+	.su-accordion {
+
+		.su-spoiler-title {
+			padding-left: 0;
 		}
 	}
 }

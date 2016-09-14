@@ -66,7 +66,6 @@
 				}
 
 				.content-bucket {
-					border: 1px solid $white;
 
 					div {
 
@@ -90,11 +89,9 @@
 								border-top-left-radius: 50%;
 								content: '';
 								height: 40px;
-								left: 50%;
+								left: 0;
 								position: absolute;
 								top: 0;
-								-webkit-transform: translateX(-50%);
-    							transform: translateX(-50%);
 								@include transition(top, .3s);
 								width: 100%;
 							}
@@ -102,6 +99,9 @@
 
 						&.learn {
 							@include gradient-overlay(right, 37, 62, 110, .5, 154, 172, 179, .5);
+							border-bottom: 1px solid $white;
+							border-left: 1px solid $white;
+							border-right: 1px solid $white;
 							color: $white;
 							font-size: .8em;
 							font-weight: bold;
@@ -382,11 +382,9 @@
 					border-top-left-radius: 50%;
 					content: '';
 					height: 40px;
-					left: 50%;
+					left: 0;
 					position: absolute;
 					top: 0;
-					-webkit-transform: translateX(-50%);
-					transform: translateX(-50%);
 					@include transition(top, .3s);
 					width: 100%;
 				}

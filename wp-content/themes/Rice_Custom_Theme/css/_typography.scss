@@ -2,13 +2,20 @@ $font-stack: "neuzeit-grotesk", Helvetica, Arial, sans-serif;
 $serif-font: "garamond-premier-pro", Garamond, "Times New Roman", serif;
 $font-awesome: normal normal normal 14px/1 FontAwesome;
 
-h1,h2,h3,h4,h5,h6,p,a,li,span {
+h1,h2,h3,h4,h5,h6,div,p,a,li,span {
 	font-family: $font-stack;
 	font-weight: 100;
 }
 
 h1,h2,h3,h4,h5,h6 {
 	
+}
+
+h3 {
+
+	.course-filter & {
+		font-size: 20px;
+	}
 }
 
 h4{
@@ -32,7 +39,7 @@ h6 {
 	font-weight: 600;
 
 	.catalog &,
-	.content & {
+	.content &, {
 		font-weight: normal;
 		margin-top: 0;
 		text-transform: none;
@@ -83,6 +90,14 @@ a {
 	}
 }
 
+div {
+
+	.su-spoiler-title,
+	.su-tabs-pane {
+		font-size: 1em;
+	}
+}
+
 span {
 
 	#course-info & {
@@ -104,5 +119,16 @@ span {
 .accordion {
 	&::after {
 		font: $font-awesome;
+	}
+}
+
+::before {
+
+	.su-tabs-nav & {
+		color: $white;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: 4em;
+		line-height: 100px;
+		margin-right: 5px;
 	}
 }
