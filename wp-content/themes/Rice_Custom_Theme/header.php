@@ -19,6 +19,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 ?>
+
 <!DOCTYPE html>
 <!--[if IE 8 ]>
 	<html class="no-js ie8" <?php language_attributes(); ?>>
@@ -43,6 +44,7 @@ if ( ! defined( 'WPINC' ) ) {
 	</head>
 
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
 <?php responsive_mobile_body_top(); ?>
 <div id="container" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'responsive-mobile' ); ?></a>
@@ -72,7 +74,7 @@ if ( ! defined( 'WPINC' ) ) {
 					<?php responsive_mobile_header_one(); ?>
 				</div>
 				<div id="secondary-header">
-					<?php responsive_mobile_header_two(); ?>
+					<h3>The Future of <span>U</span><sup>&copy;</sup></h3>
 				</div>
 			</div>
 		</div>

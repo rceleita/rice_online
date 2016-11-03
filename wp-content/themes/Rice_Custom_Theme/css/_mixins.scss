@@ -13,7 +13,7 @@
 }
 
 @mixin bgd-img($year, $month, $img-name, $img-type, $pos-x, $pos-y, $repeat, $color) {
-	background: url('/rice_online/wp-content/uploads/' + $year + '/' + $month + '/' + $img-name + '.' + $img-type + '') $pos-x $pos-y $repeat $color;
+	background: url('/wp-content/uploads/' + $year + '/' + $month + '/' + $img-name + '.' + $img-type + '') $pos-x $pos-y $repeat $color;
 }
 
 @mixin transition ($type, $time) {

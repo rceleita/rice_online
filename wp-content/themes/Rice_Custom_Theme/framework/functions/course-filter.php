@@ -20,12 +20,16 @@
             <ul class="taxonomy-menu">
                 <?php $all_cat = site_url() . '/courses/'; ?>
                 <li><a href="<?php echo($all_cat); ?>">All</a></li>
-            <?php foreach ( $types as $type ) : ?>
-                <?php $type_link = site_url() . '/category_courses/' . $type->slug . '/'; ?>
-                <li>
-                    <a href="<?php echo esc_url( $type_link ); ?>">
-                    <?php echo( ucwords( $type->name ) ); ?>
-                </a></li>
+                <?php foreach ( $types as $type ) : 
+
+                    $course_tag     = ucwords( $type->name );
+                    $course_class   = strtolower(str_replace(' ', '_', $course_tag));?>
+
+                    <?php $type_link = site_url() . '/category_courses/' . $type->slug . '/'; ?>
+                    <li>
+                        <a class="<?php echo( $course_class ); ?>" href="<?php echo esc_url( $type_link ); ?>">
+                        <?php echo( ucwords( $type->name ) ); ?>
+                    </a></li>
                 <?php endforeach; ?>
             </ul>
         </nav>

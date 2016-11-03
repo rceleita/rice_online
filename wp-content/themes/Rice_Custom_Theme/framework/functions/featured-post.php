@@ -23,16 +23,16 @@ function quick_info_shorty( $atts ) {
         $thumb 			= get_post_thumbnail_id($post->ID);
 		$img_url 		= wp_get_attachment_url( $thumb,'full');
 		$content 		= get_the_excerpt($post->ID);
-		$enroll 		= get_post_meta($post->ID, 'Enroll Now', true);
-		$start 			= get_post_meta($post->ID, 'Course Start', true);
-		$length 		= get_post_meta($post->ID, 'Course Length', true);
-		$time 			= get_post_meta($post->ID, 'Time Requirement', true);
+		$enroll 		= get_field('enroll', $post->ID);
+		$start          = get_field('course_start', $post->ID);
+		$length 		= get_field('course_length', $post->ID);
+		$time 			= get_field('time_requirement', $post->ID);
 
         if($start != ''){
             $start      = date("M j, Y", strtotime($start));
         }
 
-        $return .= '<div class="content"><h6>' . do_shortcode('[listfeatured orderby=count]') . '</h6>';
+        $return .= '<div class="content"><h6>Featured Course</h6>';
         $return .= '<h4><a class="item" href="' . $permalink . '">' . apply_filters( 'the_title', $post->post_title ) . '</a></h4>';
         $return .= '<div class="divider"></div>';
         $return .= '<p class="excerpt">' . $content . '</p>';

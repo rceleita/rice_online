@@ -301,7 +301,7 @@ function elr_tax_nav_filter($query, $post_type, $taxonomy, $current_term = null)
                 if (in_array($term->name, $rel_terms, TRUE)) {
                     $term_link = get_term_link($term);
 
-                    if ($term->name === $current_term && $taxonomy == 'course_platform') {
+                    if ($term->name === $current_term && $taxonomy == 'course_subject') {
                         $class = 'active platform';
                     } else if ($term->name === $current_term) {
                         $class = 'active';
@@ -316,7 +316,7 @@ function elr_tax_nav_filter($query, $post_type, $taxonomy, $current_term = null)
                     echo '">';
                         echo '<a href="';
                         echo esc_url($term_link) . '"';
-                            echo 'class="' . $class . '"';
+                            echo 'class="' . $class . $tax_name . '"';
                             echo 'data-term="' . $term->slug . '"';
                         echo '>';
                         echo(ucwords($term->name));

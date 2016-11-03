@@ -39,6 +39,42 @@ function custom_register() {
 
 	register_post_type( 'course', $args );
 
+	$labels = array(
+		'name'               => _x( 'Professors', 'post type general name' ),
+		'singular_name'      => _x( 'Professors', 'post type singular name' ),
+		'menu_name'          => _x( 'Professors', 'admin menu' ),
+		'name_admin_bar'     => _x( 'Professors', 'add new on admin bar' ),
+		'add_new'            => _x( 'Add New', 'professor' ),
+		'add_new_item'       => __( 'Add New Professor' ),
+		'new_item'           => __( 'New Professor' ),
+		'edit_item'          => __( 'Edit Professor' ),
+		'view_item'          => __( 'View Professor' ),
+		'all_items'          => __( 'All Professors' ),
+		'search_items'       => __( 'Search Professors' ),
+		'parent_item_colon'  => __( 'Parent Professor:' ),
+		'not_found'          => __( 'No professor found.' ),
+		'not_found_in_trash' => __( 'No professor found in Trash.' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'Description.' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'professors' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'has_archive' 		 => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'categories', 'custom-fields' )
+	);
+
+	register_post_type( 'professor', $args );
+
     $labels = array(
 		'name'              => _x( 'Course Subject', 'taxonomy general name' ),
 		'singular_name'     => _x( 'Course Subject', 'taxonomy singular name' ),

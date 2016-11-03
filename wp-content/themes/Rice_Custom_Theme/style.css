@@ -12,12 +12,20 @@ Rice Online Learning Custom Theme, Copyright (C) 2016 Signet Interactive
 /* =============================================
 	COLORS
 ============================================= */
-body,
 #main-menu-container {
   background-color: #254a84; }
 
-.entry-header,
 .content-area {
+  background-color: transparent !important; }
+  .page .content-area {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    padding-left: 5%;
+    padding-right: 5%; }
+  .home .content-area {
+    background-color: transparent !important;
+    padding: 15px; }
+
+.entry-header {
   background-color: transparent !important; }
 
 header,
@@ -28,6 +36,8 @@ div.su-spoiler-title {
   color: #4d4d4d; }
 div.su-spoiler-content {
   color: #254a84; }
+div.fsBody {
+  background-color: transparent !important; }
 
 h1 {
   color: #254a84; }
@@ -44,6 +54,8 @@ h1 {
   color: #254a84; }
 .content h4 a {
   color: white; }
+.form h4 {
+  color: white; }
 
 .highschool h6 {
   color: #9d6897; }
@@ -53,12 +65,12 @@ h1 {
   color: #5690dd; }
 .lifelong h6 {
   color: #77bbc6; }
+.form h6, .content h6 {
+  color: #6c95d6; }
 .catalog h6 a {
   color: #999999 !important; }
-.content h6 a {
-  color: #6c95d6; }
 
-.home-content p, .content p {
+.home-content p, .content p, .form p {
   color: white; }
 
 #course-info li::before {
@@ -89,6 +101,9 @@ a.red {
   .ls-sec3-t5-c2 a:hover {
     color: #4479cb;
     text-decoration: none; }
+
+form {
+  background-color: transparent !important; }
 
 #course-info span {
   color: #254a84; }
@@ -144,6 +159,34 @@ a.red {
 .dpe-flexible-posts .title {
   background-color: rgba(0, 0, 0, 0.4); }
 
+.form form input[type="text"],
+.form form input[type="email"] {
+  background-color: #254a84;
+  border-color: white;
+  color: white; }
+.form form ::-webkit-input-placeholder {
+  color: #ccc; }
+.form form :-moz-placeholder {
+  /* Firefox 18- */
+  color: #ccc; }
+.form form ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ccc; }
+.form form :-ms-input-placeholder {
+  color: #ccc; }
+.form form .submit {
+  text-align: center; }
+  .form form .submit input[type="submit"] {
+    background-color: white;
+    border: 0 none;
+    border-radius: 5px;
+    color: #254a84;
+    padding: 5px 30px;
+    transition: all 0.2s; }
+    .form form .submit input[type="submit"]:hover {
+      background-color: #254a84;
+      color: white; }
+
 #footer {
   background-color: white; }
 
@@ -154,35 +197,49 @@ h1, h2, h3, h4, h5, h6, div, p, a, li, span {
   font-family: "neuzeit-grotesk", Helvetica, Arial, sans-serif;
   font-weight: 100; }
 
+h2 {
+  margin-bottom: 1em; }
+
 .course-filter h3 {
   font-size: 20px; }
 
 #professor h4 {
   font-size: 1.5em; }
 .catalog h4, .content h4 {
-  font-size: 2em;
+  font-size: 1.8em;
   letter-spacing: 1.2px; }
 .main-buckets h4 {
   font-size: 2.5em; }
+.form h4 {
+  border-bottom: 1px solid white;
+  line-height: 1.25em;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  text-transform: uppercase; }
 
 h6 {
   font-weight: 600; }
-  .catalog h6, .content h6 {
+  .catalog h6, .content h6, .form h6 {
     font-weight: normal;
     margin-top: 0;
     text-transform: none; }
-    .catalog h6::before, .content h6::before {
+    .catalog h6::before, .content h6::before, .form h6::before {
       font: normal normal normal 14px/1 FontAwesome;
       margin-right: 5px; }
   .catalog h6::before {
-    content: url(/rice_online/wp-content/uploads/2016/08/bgd_books.png);
+    content: url(/wp-content/uploads/2016/08/bgd_books.png);
     opacity: .4; }
   .content h6::before {
     color: #6c95d6;
     content: '\f02e'; }
+  .form h6::before {
+    content: '\f003';
+    font-size: 1.5em; }
 
-.home-content p {
-  font-family: "garamond-premier-pro", Garamond, "Times New Roman", serif; }
+p {
+  line-height: 1.5em; }
+  .home-content p {
+    font-family: "garamond-premier-pro", Garamond, "Times New Roman", serif; }
 
 #course-info li::before {
   font: normal normal normal 14px/1 FontAwesome; }
@@ -233,29 +290,41 @@ div .su-tabs-pane {
   box-sizing: border-box; }
 
 body {
-  background: url("/rice_online/wp-content/uploads/2016/08/bgd_body.jpg") 0 20% no-repeat transparent;
+  scrollbar-arrow-color: #887d75;
+  scrollbar-base-color: #736357;
+  scrollbar-track-color: #5d5047;
+  background: url("/wp-content/uploads/2016/08/bgd_body.jpg") 0 20% no-repeat transparent;
   background-size: cover; }
-  body.page-template-blog-courses main#main {
+  body.page-template-blog-courses main#main, body.page-template-certification-template main#main, body.single-professor main#main, body.page-template-full-width-banner-page main#main {
     width: 100%; }
 
 #header {
+  height: 110px;
   position: fixed;
   width: 100%;
-  z-index: 99998; }
+  z-index: 99999; }
   #header #logo img {
     max-width: 40%; }
-  #header.shrink {
-    padding: 10px 0; }
-    #header.shrink #logo img {
-      max-width: 35%; }
-    #header.shrink + #main-menu-container {
-      top: 82px; }
+  #header.shrink #logo img {
+    max-width: 35%; }
+  #header.shrink + #main-menu-container {
+    top: 82px;
+    z-index: 999999; }
+  #header #secondary-header h3 {
+    font-size: 2em; }
+    #header #secondary-header h3 span {
+      font-weight: bold; }
+  #header #secondary-header sup {
+    font-size: 50%;
+    top: -.75em; }
 
 #container {
   background-color: rgba(255, 255, 255, 0.5); }
   #container #course-info {
     margin: 0 auto;
     padding: 30px 15px; }
+    #container #course-info li {
+      font-size: 1em !important; }
 
 #main article {
   border-bottom: 0 none; }
@@ -297,28 +366,28 @@ body {
     background-color: transparent; }
   #main-menu-container #main-navigation .mega-menu {
     text-align: center; }
-    #main-menu-container #main-navigation .mega-menu li {
-      margin-right: 60px; }
-      #main-menu-container #main-navigation .mega-menu li a {
-        display: inline-block;
-        letter-spacing: 1px;
-        font-weight: 500 !important;
-        height: 100%;
-        margin: 0;
-        padding: 0px;
-        text-transform: uppercase !important; }
-        #main-menu-container #main-navigation .mega-menu li a:hover {
-          background: transparent !important;
-          color: #cccccc !important; }
-      #main-menu-container #main-navigation .mega-menu li:last-of-type {
-        margin-right: 0; }
-      #main-menu-container #main-navigation .mega-menu li.mega-toggle-on a {
-        background: transparent !important; }
+    #main-menu-container #main-navigation .mega-menu li a {
+      display: inline-block;
+      letter-spacing: 1px;
+      font-weight: 500 !important;
+      height: 100%;
+      margin: 0;
+      padding: 0px;
+      text-transform: uppercase !important; }
+      #main-menu-container #main-navigation .mega-menu li a:hover {
+        background: transparent !important;
+        color: #cccccc !important; }
+    #main-menu-container #main-navigation .mega-menu li:last-of-type {
+      margin-right: 0; }
+    #main-menu-container #main-navigation .mega-menu li.mega-toggle-on a {
+      background: transparent !important; }
+    #main-menu-container #main-navigation .mega-menu li.ui-menu-item {
+      height: auto !important; }
     #main-menu-container #main-navigation .mega-menu li.mega-menu-flyout ul.mega-sub-menu {
       min-width: 200px;
       width: auto; }
-  #main-menu-container #main-navigation .mega-menu li {
-    margin-right: 0; }
+    #main-menu-container #main-navigation .mega-menu#mega-menu-header-menu > li {
+      margin-right: 100px; }
   #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu > .mega-menu-item {
     padding: 0 15px !important; }
   #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 {
@@ -332,10 +401,20 @@ body {
       margin-bottom: 20px !important;
       padding-bottom: 20px !important; }
     #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat {
-      padding-left: 0; }
+      background: transparent !important;
+      border: 0 none !important;
+      font-size: 1em !important;
+      padding: 0 !important; }
       #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item {
+        clear: none;
         margin-right: 2%;
         width: 30%; }
+        #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item:hover, #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item.ui-state-focus {
+          background: none !important;
+          background-color: transparent !important;
+          border: 0 none !important; }
+        #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item .ui-menu-icon, #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item > ul {
+          display: none !important; }
         #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item a {
           font-weight: 100 !important;
           line-height: 1em;
@@ -343,11 +422,12 @@ body {
           #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item a div {
             margin-top: 0; }
   #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu ul li {
-    display: inline-block;
+    float: left;
     margin-right: 0; }
   #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu ul.dpe-flexible-posts li {
     margin-bottom: 2%;
     margin-right: 2%;
+    min-height: 150px;
     position: relative;
     width: 44%; }
     #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu ul.dpe-flexible-posts li:nth-child(3), #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu ul.dpe-flexible-posts li:nth-child(4) {
@@ -377,7 +457,7 @@ body {
   padding-top: 150px; }
 
 .su-row .su-column {
-  box-shadow: 0 0 10px #254a84; }
+  box-shadow: 0 0 10px #bbb; }
 
 /* video background */
 video {
@@ -434,15 +514,26 @@ video {
     font-size: 2.5em;
     font-weight: bold; }
 
+form .fsSubmitButton {
+  padding: 15px 0;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  width: 100% !important; }
+  form .fsSubmitButton:hover {
+    background: #1a345c !important; }
+
 /* =============================================
 	HOMEPAGE
 ============================================= */
 .home #container {
   background: transparent !important; }
 .home #wrapper {
-  background: url("/rice_online/wp-content/uploads/2016/08/bgd_wrapper.jpg") 0 0 no-repeat transparent;
+  background: url("/wp-content/uploads/2016/10/home-bgd-1.png") 0 0 no-repeat transparent;
   background-size: 100% auto; }
+.home main .entry-header {
+  margin-bottom: 120px; }
 .home .home-content {
+  margin-bottom: 5em;
   text-align: center;
   width: 100%; }
   .home .home-content .su-column {
@@ -454,8 +545,10 @@ video {
     width: 70%; }
     .home .home-content .su-column div {
       font-size: 1.2em; }
-      .home .home-content .su-column div p:first-of-type {
-        text-transform: uppercase; }
+      .home .home-content .su-column div p {
+        font-size: 3.5em; }
+        .home .home-content .su-column div p:first-of-type {
+          text-transform: uppercase; }
 .home .search {
   margin-bottom: 150px; }
   .home .search .su-column {
@@ -463,7 +556,7 @@ video {
 .home .main-buckets .su-column {
   position: relative; }
   .home .main-buckets .su-column .su-column-inner {
-    background: url("/rice_online/wp-content/uploads/2016/08/bgd_bucket.png") 100% 100% no-repeat transparent; }
+    background: url("/wp-content/uploads/2016/08/bgd_bucket.png") 100% 100% no-repeat transparent; }
     .home .main-buckets .su-column .su-column-inner p {
       margin-bottom: 0; }
     .home .main-buckets .su-column .su-column-inner .bucket-link {
@@ -477,7 +570,8 @@ video {
     .home .main-buckets .su-column .su-column-inner .content-bucket div:first-of-type {
       background-color: white;
       display: block;
-      padding: 40px 20px;
+      height: 270px;
+      padding: 40px 25px;
       position: relative; }
       .home .main-buckets .su-column .su-column-inner .content-bucket div:first-of-type h4 {
         text-transform: uppercase; }
@@ -503,8 +597,13 @@ video {
       font-size: .8em;
       font-weight: bold;
       line-height: 1.8em;
-      padding: 20px;
       text-transform: uppercase; }
+      .home .main-buckets .su-column .su-column-inner .content-bucket div.learn a {
+        color: white !important;
+        display: block;
+        padding: 20px; }
+        .home .main-buckets .su-column .su-column-inner .content-bucket div.learn a:hover {
+          text-decoration: none !important; }
       .home .main-buckets .su-column .su-column-inner .content-bucket div.learn i {
         font-size: 1.8em;
         margin-right: 15px; }
@@ -521,7 +620,7 @@ video {
   .home .featured .content h4 {
     text-transform: uppercase; }
 .home .featured .catalog {
-  background: url("/rice_online/wp-content/uploads/2016/08/bgd_catalog.png") 0 0 no-repeat transparent;
+  background: url("/wp-content/uploads/2016/08/bgd_catalog.png") 0 0 no-repeat transparent;
   background-size: cover;
   border: 1px solid white; }
   .home .featured .catalog .su-divider {
@@ -530,10 +629,10 @@ video {
     list-style: none;
     margin: 0;
     max-height: 330px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 0; }
 .home .featured .course {
-  border: 2px solid white;
+  border: 1px solid white;
   position: relative; }
   .home .featured .course .featured-course {
     margin-bottom: 0; }
@@ -555,7 +654,8 @@ video {
       width: 65%; }
       .home .featured .course .featured-course .thumbnail img {
         height: 400px;
-        max-width: 100%; }
+        max-width: 100%;
+        width: 100%; }
       .home .featured .course .featured-course .thumbnail .info {
         font-size: .8em;
         font-weight: bold;
@@ -609,17 +709,20 @@ video {
     .home .twitter .su-column .tweettext .tweet_author a::after {
       content: ' : '; }
 .home .video .video-bucket {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 150px, rgba(255, 0, 0, 0) 40%), url("/rice_online/wp-content/uploads/2016/08/bgd_video.png") 0 0 no-repeat transparent;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 150px, rgba(255, 0, 0, 0) 40%), url("/wp-content/uploads/2016/08/bgd_video.png") 0 0 no-repeat transparent;
   background-size: cover;
+  height: 402px;
   padding: 60px 30px; }
   .home .video .video-bucket .su-column-inner {
-    width: 33%; }
+    width: 34%; }
     .home .video .video-bucket .su-column-inner h4 {
       font-size: 2em;
       line-height: 1.3em;
       text-transform: uppercase; }
     .home .video .video-bucket .su-column-inner .su-divider {
       width: 70%; }
+    .home .video .video-bucket .su-column-inner ol {
+      padding-left: 15px; }
     .home .video .video-bucket .su-column-inner p {
       font-size: .9em; }
     .home .video .video-bucket .su-column-inner .button {
@@ -633,7 +736,7 @@ video {
   text-align: center;
   text-transform: uppercase; }
 .home .featured-carousel .su-column {
-  background: url("/rice_online/wp-content/uploads/2016/08/bgd_bucket.png") 100% 100% no-repeat transparent; }
+  background: url("/wp-content/uploads/2016/08/bgd_bucket.png") 100% 100% no-repeat transparent; }
   .home .featured-carousel .su-column:first-of-type {
     margin-left: 0; }
   .home .featured-carousel .su-column img {
@@ -646,7 +749,8 @@ video {
         top: -20px; }
   .home .featured-carousel .su-column h4 {
     background-color: white;
-    font-size: 2em;
+    font-size: 1.3em;
+    min-height: 150px;
     margin: 0;
     padding: 40px 20px 15px;
     position: relative;
@@ -677,17 +781,13 @@ video {
     .home .featured-carousel .su-column .learn i {
       font-size: 1.8em;
       margin-right: 15px; }
+.home .form {
+  padding: 15px; }
 
 /* =============================================
 	INTERNAL PAGES
 ============================================= */
 /* INTERNAL PAGES */
-.archive #wrapper {
-  /* FF3.6-15 */
-  background: -moz-linear-gradient(left, white 0%, white 41%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, white 0%, white 41%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, white 0%, white 41%, rgba(255, 255, 255, 0) 42%); }
-
 #title {
   margin-bottom: 4em; }
   #title h1 {
@@ -730,7 +830,7 @@ main {
       content: '\f147'; }
   .archive .content-area .sorting-table nav {
     max-height: 0;
-    overflow: scroll;
+    overflow: hidden;
     transition: .3s ease-in-out; }
     .archive .content-area .sorting-table nav.show {
       max-height: 300px; }
@@ -748,18 +848,17 @@ main {
 .archive .content-area .courses {
   width: 74%; }
   .archive .content-area .courses article {
-    box-shadow: 0 0 10px #254a84;
-    display: inline-block;
+    box-shadow: 0 0 10px #bbb;
+    float: left;
     margin-bottom: 2%;
     margin-right: 2%;
     padding-bottom: 0 !important;
     position: relative;
     width: 31%; }
     .archive .content-area .courses article .subject_tag {
-      background-color: #d23a52;
+      background-color: #616e7a;
       color: white;
       font-size: 10px;
-      font-weight: bold;
       left: 0;
       max-width: 50%;
       padding: 10px;
@@ -773,7 +872,11 @@ main {
       z-index: 99; }
       .archive .content-area .courses article .course-link:hover + .entry-content .course-title::before {
         top: -20px; }
+    .archive .content-area .courses article .course-thumbnail {
+      min-height: 194px;
+      min-width: 261px; }
     .archive .content-area .courses article .course-title {
+      min-height: 216px;
       padding: 40px 20px 20px;
       position: relative; }
       .archive .content-area .courses article .course-title::before {
@@ -799,36 +902,160 @@ main {
         .archive .content-area .courses article .course-title p i {
           font-size: 1.8em;
           margin-right: 15px; }
+        .archive .content-area .courses article .course-title p.learn {
+          bottom: 20px;
+          position: absolute; }
+
+.subject_tag.computer_science {
+  background-color: #d23a52 !important; }
+.subject_tag.computer_programming {
+  background-color: #00babb !important; }
+.subject_tag.software_engineering {
+  background-color: #597c0a !important; }
+.subject_tag.engineering {
+  background-color: #45488a !important; }
+.subject_tag.physics {
+  background-color: #d25945 !important; }
+.subject_tag.chemistry {
+  background-color: #597c0a !important; }
+.subject_tag.education {
+  background-color: #c3458b !important; }
+.subject_tag.electronics {
+  background-color: #45488a !important; }
+.subject_tag.immunology {
+  background-color: #597c0a !important; }
+.subject_tag.biology {
+  background-color: #c3458b !important; }
+.subject_tag.humanities {
+  background-color: #45488a !important; }
+.subject_tag.professional_education {
+  background-color: #d25945 !important; }
+.subject_tag.environmental_sciences {
+  background-color: #597c0a !important; }
+.subject_tag.business {
+  background-color: #c3458b !important; }
+.subject_tag.sports_management {
+  background-color: #c3458b !important; }
+.subject_tag.american_studies {
+  background-color: #45488a !important; }
+.subject_tag.world_cultures {
+  background-color: #597c0a !important; }
+.subject_tag.economics {
+  background-color: #c3458b !important; }
+.subject_tag.mathematics {
+  background-color: #d25945 !important; }
+.subject_tag.statistics {
+  background-color: #45488a !important; }
+
+.taxonomy-menu .computer_science {
+  color: #d23a52 !important; }
+.taxonomy-menu .computer_programming {
+  color: #00babb !important; }
+.taxonomy-menu .software_engineering {
+  color: #597c0a !important; }
+.taxonomy-menu .engineering {
+  color: #45488a !important; }
+.taxonomy-menu .physics {
+  color: #d25945 !important; }
+.taxonomy-menu .chemistry {
+  color: #597c0a !important; }
+.taxonomy-menu .education {
+  color: #c3458b !important; }
+.taxonomy-menu .electronics {
+  color: #45488a !important; }
+.taxonomy-menu .immunology {
+  color: #597c0a !important; }
+.taxonomy-menu .biology {
+  color: #c3458b !important; }
+.taxonomy-menu .humanities {
+  color: #45488a !important; }
+.taxonomy-menu .professional_education {
+  color: #d25945 !important; }
+.taxonomy-menu .environmental_sciences {
+  color: #597c0a !important; }
+.taxonomy-menu .business {
+  color: #c3458b !important; }
+.taxonomy-menu .sports_management {
+  color: #c3458b !important; }
+.taxonomy-menu .american_studies {
+  color: #45488a !important; }
+.taxonomy-menu .world_cultures {
+  color: #597c0a !important; }
+.taxonomy-menu .economics {
+  color: #c3458b !important; }
+.taxonomy-menu .mathematics {
+  color: #d25945 !important; }
+.taxonomy-menu .statistics {
+  color: #45488a !important; }
 
 /* SINGLE COURSE */
-.single-course .breadcrumb-list {
+.single-course .breadcrumb-list,
+.page-template-certification-template .breadcrumb-list,
+.single-professor .breadcrumb-list,
+.page-template-full-width-banner-page .breadcrumb-list {
   margin-bottom: 1.5em; }
-  .single-course .breadcrumb-list + p {
-    font-size: 1.6em; }
-.single-course #content-header {
+.single-course #content p,
+.single-course #content li,
+.single-course #content-full p,
+.single-course #content-full li,
+.page-template-certification-template #content p,
+.page-template-certification-template #content li,
+.page-template-certification-template #content-full p,
+.page-template-certification-template #content-full li,
+.single-professor #content p,
+.single-professor #content li,
+.single-professor #content-full p,
+.single-professor #content-full li,
+.page-template-full-width-banner-page #content p,
+.page-template-full-width-banner-page #content li,
+.page-template-full-width-banner-page #content-full p,
+.page-template-full-width-banner-page #content-full li {
+  font-size: 1.3em; }
+.single-course #content-header,
+.page-template-certification-template #content-header,
+.single-professor #content-header,
+.page-template-full-width-banner-page #content-header {
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 50% 25%;
   box-shadow: 0 0 20px #4d4d4d;
   min-height: 250px;
   padding: 80px 0;
   text-align: center; }
-  .single-course #content-header h2 {
+  .single-course #content-header h2,
+  .page-template-certification-template #content-header h2,
+  .single-professor #content-header h2,
+  .page-template-full-width-banner-page #content-header h2 {
     margin-bottom: 1.5em; }
-.single-course #course-info ul {
+.single-course #course-info ul,
+.page-template-certification-template #course-info ul,
+.single-professor #course-info ul,
+.page-template-full-width-banner-page #course-info ul {
   list-style: none;
   margin: 0;
   padding: 0; }
-  .single-course #course-info ul li {
+  .single-course #course-info ul li,
+  .page-template-certification-template #course-info ul li,
+  .single-professor #course-info ul li,
+  .page-template-full-width-banner-page #course-info ul li {
     display: inline-block;
     margin-right: 5%;
     min-width: 15%;
     padding-left: 50px;
     position: relative; }
-    .single-course #course-info ul li:last-of-type {
+    .single-course #course-info ul li:last-of-type,
+    .page-template-certification-template #course-info ul li:last-of-type,
+    .single-professor #course-info ul li:last-of-type,
+    .page-template-full-width-banner-page #course-info ul li:last-of-type {
       margin-right: 0; }
-    .single-course #course-info ul li span {
+    .single-course #course-info ul li span,
+    .page-template-certification-template #course-info ul li span,
+    .single-professor #course-info ul li span,
+    .page-template-full-width-banner-page #course-info ul li span {
       display: block; }
-    .single-course #course-info ul li::before {
+    .single-course #course-info ul li::before,
+    .page-template-certification-template #course-info ul li::before,
+    .single-professor #course-info ul li::before,
+    .page-template-full-width-banner-page #course-info ul li::before {
       border-right: 1px solid white;
       display: inline-block;
       font-size: 2.5em;
@@ -838,39 +1065,92 @@ main {
       top: 50%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%); }
-    .single-course #course-info ul li.start::before {
+    .single-course #course-info ul li.start::before,
+    .page-template-certification-template #course-info ul li.start::before,
+    .single-professor #course-info ul li.start::before,
+    .page-template-full-width-banner-page #course-info ul li.start::before {
       content: '\f017'; }
-    .single-course #course-info ul li.professor::before {
+    .single-course #course-info ul li.professor::before,
+    .page-template-certification-template #course-info ul li.professor::before,
+    .single-professor #course-info ul li.professor::before,
+    .page-template-full-width-banner-page #course-info ul li.professor::before {
       content: '\f007'; }
-    .single-course #course-info ul li.workload::before {
+    .single-course #course-info ul li.workload::before,
+    .page-template-certification-template #course-info ul li.workload::before,
+    .single-professor #course-info ul li.workload::before,
+    .page-template-full-width-banner-page #course-info ul li.workload::before {
       content: '\f040'; }
-    .single-course #course-info ul li.certificate::before {
+    .single-course #course-info ul li.certificate::before,
+    .page-template-certification-template #course-info ul li.certificate::before,
+    .single-professor #course-info ul li.certificate::before,
+    .page-template-full-width-banner-page #course-info ul li.certificate::before {
       content: '\f0a3'; }
-    .single-course #course-info ul li.tuition::before {
-      content: url(/rice_online/wp-content/uploads/2016/08/icon_owl.png); }
-.single-course #professor {
+    .single-course #course-info ul li.tuition::before,
+    .page-template-certification-template #course-info ul li.tuition::before,
+    .single-professor #course-info ul li.tuition::before,
+    .page-template-full-width-banner-page #course-info ul li.tuition::before {
+      content: url(/wp-content/uploads/2016/08/icon_owl.png); }
+.single-course #professor,
+.page-template-certification-template #professor,
+.single-professor #professor,
+.page-template-full-width-banner-page #professor {
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   margin-top: 30px;
   padding: 30px 0; }
   .single-course #professor .headshot,
-  .single-course #professor .professorinfo {
+  .single-course #professor .professorinfo,
+  .page-template-certification-template #professor .headshot,
+  .page-template-certification-template #professor .professorinfo,
+  .single-professor #professor .headshot,
+  .single-professor #professor .professorinfo,
+  .page-template-full-width-banner-page #professor .headshot,
+  .page-template-full-width-banner-page #professor .professorinfo {
     float: left; }
-  .single-course #professor .headshot {
+  .single-course #professor .headshot,
+  .page-template-certification-template #professor .headshot,
+  .single-professor #professor .headshot,
+  .page-template-full-width-banner-page #professor .headshot {
     position: relative;
     width: 20%; }
-    .single-course #professor .headshot img {
-      border-radius: 50%; }
-  .single-course #professor .professorinfo {
+  .single-course #professor .professorinfo,
+  .page-template-certification-template #professor .professorinfo,
+  .single-professor #professor .professorinfo,
+  .page-template-full-width-banner-page #professor .professorinfo {
     width: 80%; }
-.single-course .enroll-container {
+.single-course .enroll-container,
+.page-template-certification-template .enroll-container,
+.single-professor .enroll-container,
+.page-template-full-width-banner-page .enroll-container {
   padding: 40px 0;
   text-align: center; }
-.single-course .sharify-container ul {
+.single-course .sharify-container ul,
+.page-template-certification-template .sharify-container ul,
+.single-professor .sharify-container ul,
+.page-template-full-width-banner-page .sharify-container ul {
   text-align: center; }
-  .single-course .sharify-container ul li {
+  .single-course .sharify-container ul li,
+  .page-template-certification-template .sharify-container ul li,
+  .single-professor .sharify-container ul li,
+  .page-template-full-width-banner-page .sharify-container ul li {
     display: inline-block;
     float: none; }
+
+.sharify-container::before {
+  font-family: "neuzeit-grotesk", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  left: 10%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto; }
+  .single-course .sharify-container::before {
+    content: 'Share this course:'; }
+  .single-professor .sharify-container::before {
+    content: 'Share this professor:'; }
+
+.headshot img {
+  border-radius: 50%; }
 
 /* FAQ */
 .su-tabs {
@@ -914,13 +1194,54 @@ main {
       content: '';
       display: block;
       height: 100px;
+      left: 50%;
       position: absolute;
       top: 15px;
-      transform: translate(50%, 0);
+      transform: translate(-50%, 0);
       transition: background .5s ease-out;
       width: 100px; }
   .su-tabs .su-accordion .su-spoiler-title {
     padding-left: 0; }
+
+/* SPECIALIZATION PAGE */
+.related-courses {
+  margin: 30px 0 !important; }
+  .related-courses .related-course {
+    background-color: #616e7a;
+    float: left;
+    height: 180px;
+    margin-right: 1%;
+    text-align: center;
+    width: 19%; }
+    .related-courses .related-course a {
+      color: white;
+      display: block;
+      height: 100%;
+      line-height: 150px;
+      padding: 15px 0;
+      text-transform: uppercase;
+      transition: background-color 0.2s;
+      width: 100%; }
+      .related-courses .related-course a:hover {
+        background-color: #d23a52;
+        text-decoration: none; }
+    .related-courses .related-course:last-of-type {
+      margin-right: 0; }
+  .related-courses + p {
+    clear: both;
+    margin-top: 30px; }
+  .related-courses::after {
+    clear: both;
+    content: '';
+    display: block; }
+
+/* PROFESSOR PAGES */
+.single-professor main {
+  margin-top: 50px; }
+.single-professor .headshot {
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 20px; }
 
 /* =============================================
 	SIDEBAR
@@ -986,5 +1307,218 @@ main {
 @media (min-width: 1200px) {
   #course-info {
     width: 1170px; } }
+@media (max-width: 1060px) {
+  h4 {
+    font-size: 1.2em !important; } }
+@media screen and (max-width: 991px) {
+  #site-branding,
+  #secondary-header {
+    float: left;
+    width: 50%; }
+
+  #site-branding img {
+    max-width: 70% !important; }
+
+  #mobile-current-item,
+  #mobile-nav-button {
+    display: none; }
+
+  .dpe-flexible-posts,
+  #catsubcat {
+    display: block !important; }
+
+  .su-tabs .su-tabs-nav span {
+    border-bottom: 1px solid #616e7a;
+    height: auto !important;
+    line-height: 1.5em;
+    text-align: left !important;
+    width: 100% !important; }
+    .su-tabs .su-tabs-nav span::before {
+      display: none !important; } }
+@media screen and (max-width: 910px) {
+  #course-info li {
+    margin-right: 3% !important;
+    min-width: 0 !important; }
+    #course-info li::before {
+      font-size: 2em !important; }
+
+  .content-bucket p {
+    font-size: .9em; } }
+@media screen and (max-width: 800px) {
+  #course-info li {
+    padding-left: 45px !important; }
+    #course-info li::before {
+      font-size: 1.5em !important;
+      padding-right: 5px !important; } }
+@media screen and (max-width: 768px) {
+  .mega-menu-wrap .mega-toggle-block {
+    margin-right: 0 !important;
+    width: 100%; }
+    .mega-menu-wrap .mega-toggle-block::before {
+      float: right; }
+
+  #course-info {
+    border-bottom: 1px solid #254a84;
+    padding-bottom: 20px; }
+    #course-info li {
+      display: block !important;
+      margin-bottom: 1em !important; }
+
+  .sharify-container::before {
+    left: 0; }
+
+  #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 {
+    padding: 20px 15px !important;
+    width: 100% !important; }
+    #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 h4 {
+      font-size: 1.2em !important;
+      margin-bottom: 10px !important;
+      padding-bottom: 0 !important; }
+    #main-menu-container #main-navigation .mega-menu-wrap .mega-sub-menu .mega-menu-columns-2-of-3 #catsubcat .list-group-item {
+      width: 100%; }
+
+  .dpe-flexible-posts {
+    display: none !important; }
+
+  body {
+    background: white !important; }
+    body.home {
+      background: url("/wp-content/uploads/2016/08/bgd_body.jpg") 0 20% no-repeat transparent !important;
+      background-size: cover !important; }
+      body.home #wrapper {
+        background: transparent !important; }
+
+  .home .search {
+    margin-bottom: 40px; }
+  .home .main-buckets .su-column .su-column-inner .content-bucket div:first-of-type {
+    height: auto; }
+  .home .featured .catalog, .home .featured .home .featured .content {
+    height: auto;
+    max-height: none; }
+  .home .featured .course .featured-course .content,
+  .home .featured .course .featured-course .thumbnail {
+    float: none;
+    height: auto;
+    max-height: none;
+    width: 100%; }
+    .home .featured .course .featured-course .content .enroll,
+    .home .featured .course .featured-course .thumbnail .enroll {
+      margin-top: 10px; }
+    .home .featured .course .featured-course .content img,
+    .home .featured .course .featured-course .thumbnail img {
+      height: auto; }
+    .home .featured .course .featured-course .content .start,
+    .home .featured .course .featured-course .thumbnail .start {
+      bottom: 35% !important; }
+    .home .featured .course .featured-course .content .length,
+    .home .featured .course .featured-course .thumbnail .length {
+      bottom: 20% !important; }
+
+  .su-tabs .su-tabs-nav span:hover {
+    background-color: #eee !important; }
+  .su-tabs .su-tabs-nav span.su-tabs-current {
+    background-color: #254a84 !important;
+    color: white !important; }
+
+  .sorting-table,
+  .courses {
+    width: 100% !important; }
+
+  .sorting-table {
+    margin-bottom: 30px !important; }
+
+  .courses article {
+    margin-right: 4% !important;
+    width: 45% !important; }
+
+  .video .form {
+    min-height: 0 !important; }
+  .video .video-bucket {
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.7) 150px, rgba(255, 255, 255, 0.7) 100%), url("/wp-content/uploads/2016/08/bgd_video.png") 0 0 no-repeat transparent !important;
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.7) 150px, rgba(255, 255, 255, 0.7) 100%), url("/wp-content/uploads/2016/08/bgd_video.png") 0 0 no-repeat transparent !important;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 150px, rgba(255, 255, 255, 0.7) 100%), url("/wp-content/uploads/2016/08/bgd_video.png") 0 0 no-repeat transparent !important;
+    background-size: cover !important; }
+    .video .video-bucket .su-column-inner {
+      width: 100% !important; }
+
+  .featured-carousel h2 {
+    font-size: 2em !important; }
+
+  .copyright img {
+    display: block !important; } }
+@media screen and (max-width: 667px) {
+  #header {
+    height: auto !important; }
+    #header.shrink #logo img {
+      max-width: 40% !important; }
+    #header.shrink #secondary-header h3 {
+      font-size: 1.25em !important; }
+    #header.shrink + #main-menu-container {
+      top: 115px; }
+
+  #site-branding,
+  #secondary-header {
+    float: none;
+    text-align: center;
+    width: 100%; }
+
+  #secondary-header h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    transition: font-size .2s; }
+
+  #header #logo img {
+    max-width: 50% !important; }
+
+  #main-menu-container {
+    top: 150px; }
+
+  #wrapper {
+    padding-top: 190px; }
+
+  #title {
+    margin-bottom: 2em !important; }
+    #title h1 {
+      margin-top: 0 !important; }
+
+  #course-info {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important; }
+    #course-info li {
+      margin-bottom: 1em;
+      width: 70% !important; }
+
+  .single-course .breadcrumb-list + p,
+  .page-template-certification-template .breadcrumb-list + p,
+  .single-professor .breadcrumb-list + p {
+    font-size: 1.2em !important; } }
+@media screen and (max-width: 650px) {
+  #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-megamenu > ul.mega-sub-menu,
+  #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-flyout ul.mega-sub-menu {
+    background: transparent !important;
+    box-shadow: none !important; } }
+@media screen and (max-width: 600px) {
+  #mega-menu-wrap-header-menu .mega-menu-toggle {
+    background-color: transparent !important; }
+
+  .sharify-container::before {
+    display: block;
+    position: relative; } }
+@media screen and (max-width: 480px) {
+  #header {
+    padding-top: 10px !important; }
+    #header #logo img {
+      max-width: 100% !important; }
+    #header.shrink {
+      padding-top: 0 !important; }
+      #header.shrink #logo img {
+        max-width: 80% !important; }
+      #header.shrink + #main-menu-container {
+        top: 90px !important; }
+
+  .courses article {
+    margin-bottom: 3% !important;
+    margin-right: 0 !important;
+    width: 100% !important; } }
 
 /*# sourceMappingURL=style.css.map */

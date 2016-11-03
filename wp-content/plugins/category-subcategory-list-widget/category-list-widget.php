@@ -175,11 +175,11 @@ class Walker_Simple_Example2 extends Walker_Category {
         	if(count($termchildren)>0){
 			$aclass =  ' class="parent" ';
 			if ($img == ''){
-        		$output .= "<li class=\"list-group-item".$image_style."\"><a href='".esc_url( get_term_link( $item ) )."'><div style='float:left;margin-top:5px;' class='fontweightclasscustom fontsizeclasscustom'>".$img."&nbsp;&nbsp;".esc_attr( $item->name )."</div>&nbsp;<div style='margin-right:5px;float:right;margin-top:3px;' class='fontweightclasscustom fontsizeclasscustom'>".$count."</div></a>";
+        		$output .= "<li class=\"list-group-item".$image_style."\"><a href='".esc_url( get_term_link( $item ) )."'><div style='float:left;margin-top:5px;' class='fontweightclasscustom fontsizeclasscustom'>".esc_attr( $item->name )."</div>&nbsp;<div style='margin-right:5px;float:right;margin-top:3px;' class='fontweightclasscustom fontsizeclasscustom'>".$count."</div></a>";
 			}
 			else
 			{
-        		$output .= "<li class=\"list-group-item".$image_style."\"><a href='".esc_url( get_term_link( $item ) )."'><div style='float:left;' class='fontweightclasscustom fontsizeclasscustom'>".$img."&nbsp;&nbsp;".esc_attr( $item->name )."</div>&nbsp;<div style='margin-right:5px;float:right;margin-top:3px;' class='fontweightclasscustom fontsizeclasscustom'>".$count."</div></a>";
+        		$output .= "<li class=\"list-group-item".$image_style."\"><a href='".esc_url( get_term_link( $item ) )."'><div style='float:left;' class='fontweightclasscustom fontsizeclasscustom'>" .esc_attr( $item->name )."</div>&nbsp;<div style='margin-right:5px;float:right;margin-top:3px;' class='fontweightclasscustom fontsizeclasscustom'>".$count."</div></a>";
 			}
         	}
 		else

@@ -12,14 +12,47 @@ $college: #80b2ba;
 $career: #5690dd;
 $lifelong: #77bbc6;
 $cream-color: #ececec;
+$computer_science: #d23a52;
+$computer_programming: #00babb;
+$software_engineering: #597c0a;
+$engineering: #45488a;
+$physics: #d25945;
+$chemistry: #597c0a;
+$education: #c3458b;
+$electronics: #45488a;
+$immunology: #597c0a;
+$biology: #c3458b;
+$humanities: #45488a;
+$professional_education: #d25945;
+$environmental_sciences: #597c0a;
+$business: #c3458b;
+$sports_management: #c3458b;
+$american_studies: #45488a;
+$world_cultures: #597c0a;
+$economics: #c3458b;
+$mathematics: #d25945;
+$statistics: #45488a;
 
-body, 
 #main-menu-container {
 	background-color: $dark-blue;
 }
 
-.entry-header, 
 .content-area {
+	background-color: transparent !important;
+
+	.page & {
+		background-color: rgba(255,255,255,.6) !important;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.home & {
+		background-color: transparent !important;
+		padding: 15px;
+	}
+}
+
+.entry-header {
 	background-color: transparent !important;
 }
 
@@ -40,6 +73,10 @@ div {
 
 	&.su-spoiler-content {
 		color: $dark-blue;
+	}
+
+	&.fsBody {
+		background-color: transparent !important;
 	}
 }
 
@@ -82,6 +119,10 @@ h4 {
 			color: $white;
 		}
 	}
+
+	.form & {
+		color: $white;
+	}
 }
 
 h6 {
@@ -102,14 +143,15 @@ h6 {
 		color: $lifelong;
 	}
 
+	.form &,
+	.content & {
+		color: lighten($dark-blue, 30%);
+	}
+
 	a {
 
 		.catalog & {
 			color: darken(white, 40%) !important;
-		}
-
-		.content & {
-			color: lighten($dark-blue, 30%);
 		}
 	}
 }
@@ -117,7 +159,8 @@ h6 {
 p {
 
 	.home-content &,
-	.content & {
+	.content &,
+	.form & {
 		color: $white;
 	}
 }
@@ -187,6 +230,11 @@ a {
 		}
 	}
 }
+
+form {
+	background-color: transparent !important;
+}
+
 span {
 
 	#course-info & {
@@ -290,6 +338,50 @@ span {
 
 	.title {
 		background-color: rgba(0, 0, 0, .4);
+	}
+}
+
+.form form {
+
+	input[type="text"],
+	input[type="email"] {
+		background-color: $dark-blue;
+		border-color: $white;
+		color: $white;
+	}
+
+	::-webkit-input-placeholder {
+	   color: $light-gray;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: $light-gray;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: $light-gray;  
+	}
+
+	:-ms-input-placeholder {  
+	   color: $light-gray;  
+	}
+
+	.submit {
+		text-align: center;
+
+		input[type="submit"] {
+			background-color: $white;
+			border: 0 none;
+			border-radius: 5px;
+			color: $dark-blue;
+			padding: 5px 30px;
+			@include transition(all, .2s);
+
+			&:hover {
+				background-color: $dark-blue;
+				color: $white;
+			}
+		}
 	}
 }
 

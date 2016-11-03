@@ -1,13 +1,13 @@
 /* INTERNAL PAGES */
 
-.archive {
+// .archive {
 
-	#wrapper { /* FF3.6-15 */
-		background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 42%);
-		background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 41%,rgba(255,255,255,0) 42%);
-		background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 41%,rgba(255,255,255,0) 42%);
-	}
-}
+// 	#wrapper { /* FF3.6-15 */
+// 		background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 42%);
+// 		background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 41%,rgba(255,255,255,0) 42%);
+// 		background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 41%,rgba(255,255,255,0) 42%);
+// 	}
+// }
 
 #title {
 	margin-bottom: 4em;
@@ -79,7 +79,7 @@ main {
 
 			nav {
 				max-height: 0;
-				overflow: scroll;
+				overflow: hidden;
 				transition: .3s ease-in-out;
 
 				&.show {
@@ -111,8 +111,8 @@ main {
 			width: 74%;
 
 			article {
-				box-shadow: 0 0 10px $dark-blue;
-				display: inline-block;
+				box-shadow: 0 0 10px #bbb;
+				float: left;
 				margin-bottom: 2%;
 				margin-right: 2%;
 				padding-bottom: 0 !important;
@@ -120,10 +120,9 @@ main {
 				width: 31%;
 
 				.subject_tag {
-					background-color: $red;
+					background-color: $dark-gray;
 					color: $white;
 					font-size: 10px;
-					font-weight: bold;
 					left: 0;
 					max-width: 50%;
 					padding: 10px;
@@ -152,7 +151,13 @@ main {
 					}
 				}
 
+				.course-thumbnail {
+					min-height: 194px;
+					min-width: 261px;
+				}
+
 				.course-title {
+					min-height: 216px;
 					padding: 40px 20px 20px;
 					position: relative;
 
@@ -185,6 +190,11 @@ main {
 							font-size: 1.8em;
 							margin-right: 15px;
 						}
+
+						&.learn {
+							bottom: 20px;
+							position: absolute;
+						}
 					}
 				}
 			}
@@ -192,21 +202,195 @@ main {
 	}
 }
 
+.subject_tag {
+
+	&.computer_science {
+		background-color: $computer_science !important;
+	}
+
+	&.computer_programming {
+		background-color: $computer_programming !important;
+	}
+
+	&.software_engineering {
+		background-color: $software_engineering !important;
+	}
+
+	&.engineering {
+		background-color: $engineering !important;
+	}
+
+	&.physics {
+		background-color: $physics !important;
+	}
+
+	&.chemistry {
+		background-color: $chemistry !important;
+	}
+
+	&.education {
+		background-color: $education !important;
+	}
+
+	&.electronics {
+		background-color: $electronics !important;
+	}
+
+	&.immunology {
+		background-color: $immunology !important;
+	}
+
+	&.biology {
+		background-color: $biology !important;
+	}
+
+	&.humanities {
+		background-color: $humanities !important;
+	}
+
+	&.professional_education {
+		background-color: $professional_education !important;
+	}
+
+	&.environmental_sciences {
+		background-color: $environmental_sciences !important;
+	}
+
+	&.business {
+		background-color: $business !important;
+	}
+
+	&.sports_management {
+		background-color: $sports_management !important;
+	}
+
+	&.american_studies {
+		background-color: $american_studies !important;
+	}
+
+	&.world_cultures {
+		background-color: $world_cultures !important;
+	}
+
+	&.economics {
+		background-color: $economics !important;
+	}
+
+	&.mathematics {
+		background-color: $mathematics !important;
+	}
+
+	&.statistics {
+		background-color: $statistics !important;
+	}
+}
+
+.taxonomy-menu {
+
+	.computer_science {
+		color: $computer_science !important;
+	}
+
+	.computer_programming {
+		color: $computer_programming !important;
+	}
+
+	.software_engineering {
+		color: $software_engineering !important;
+	}
+
+	.engineering {
+		color: $engineering !important;
+	}
+
+	.physics {
+		color: $physics !important;
+	}
+
+	.chemistry {
+		color: $chemistry !important;
+	}
+
+	.education {
+		color: $education !important;
+	}
+
+	.electronics {
+		color: $electronics !important;
+	}
+
+	.immunology {
+		color: $immunology !important;
+	}
+
+	.biology {
+		color: $biology !important;
+	}
+
+	.humanities {
+		color: $humanities !important;
+	}
+
+	.professional_education {
+		color: $professional_education !important;
+	}
+
+	.environmental_sciences {
+		color: $environmental_sciences !important;
+	}
+
+	.business {
+		color: $business !important;
+	}
+
+	.sports_management {
+		color: $sports_management !important;
+	}
+
+	.american_studies {
+		color: $american_studies !important;
+	}
+
+	.world_cultures {
+		color: $world_cultures !important;
+	}
+
+	.economics {
+		color: $economics !important;
+	}
+
+	.mathematics {
+		color: $mathematics !important;
+	}
+
+	.statistics {
+		color: $statistics !important;
+	}
+}
+
 /* SINGLE COURSE */
 
-.single-course {
+.single-course,
+.page-template-certification-template,
+.single-professor,
+.page-template-full-width-banner-page {
 
 	.breadcrumb-list {
 		margin-bottom: 1.5em;
+	}
 
-		+ p {
-			font-size: 1.6em;
+	#content,
+	#content-full {
+
+		p, 
+		li {
+			font-size: 1.3em;
 		}
 	}
 
 	#content-header {
 		background-size: cover;
-		background-position: 50% 50%;
+		background-position: 50% 25%;
 		box-shadow: 0 0 20px $black;
 		min-height: 250px;
 		padding: 80px 0;
@@ -282,7 +466,7 @@ main {
 				&.tuition {
 
 					&::before {
-						content: url(/rice_online/wp-content/uploads/2016/08/icon_owl.png);
+						content: url(/wp-content/uploads/2016/08/icon_owl.png);
 					}
 				}
 			}
@@ -303,10 +487,6 @@ main {
 		.headshot {
 			position: relative;
 			width: 20%;
-
-			img {
-				border-radius: 50%;
-			}
 		}
 
 		.professorinfo {
@@ -329,6 +509,33 @@ main {
 				float: none;
 			}
 		}
+	}
+}
+
+.sharify-container {
+
+	&::before {
+		font-family: $font-stack;
+		font-weight: bold;
+		left: 10%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: auto;
+		
+		.single-course & {
+			content: 'Share this course:';
+		}
+		.single-professor & {
+			content: 'Share this professor:';
+		}
+	}
+}
+
+.headshot {
+
+	img {
+		border-radius: 50%;
 	}
 }
 
@@ -409,9 +616,10 @@ main {
 				content: '';
 				display: block;
 				height: 100px;
+				left: 50%;
 				position: absolute;
 				top: 15px;
-				transform: translate(50%, 0);
+				transform: translate(-50%, 0);
 				transition: background .5s ease-out;
 				width: 100px;
 			}
@@ -423,5 +631,66 @@ main {
 		.su-spoiler-title {
 			padding-left: 0;
 		}
+	}
+}
+
+/* SPECIALIZATION PAGE */
+
+.related-courses {
+	margin: 30px 0 !important;
+
+	.related-course {
+		background-color: $dark-gray;
+		float: left;
+		height: 180px;
+		margin-right: 1%;
+		text-align: center;
+		width: 19%;
+
+		a {
+			color: $white;
+			display: block;
+			height: 100%;
+			line-height: 150px;
+			padding: 15px 0;
+			text-transform: uppercase;
+			@include transition(background-color, .2s);
+			width: 100%;
+
+			&:hover {
+				background-color: $red;
+				text-decoration: none;
+			}
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}	
+
+	+ p {
+		clear: both;
+		margin-top: 30px;
+	}
+
+	&::after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+}
+
+/* PROFESSOR PAGES */
+
+.single-professor {
+
+	main {
+		margin-top: 50px;
+	}
+
+	.headshot {
+		float: left;
+		margin-bottom: 20px;
+		margin-right: 20px;
 	}
 }

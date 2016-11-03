@@ -1,4 +1,4 @@
-/** Tuesday 13th of September 2016 05:39:24 PM (core) **/
+/** Thursday 22nd of September 2016 06:43:01 PM (core) **/
 
 #mega-menu-wrap-header-menu, #mega-menu-wrap-header-menu #mega-menu-header-menu, #mega-menu-wrap-header-menu #mega-menu-header-menu ul.mega-sub-menu, #mega-menu-wrap-header-menu #mega-menu-header-menu li.mega-menu-item, #mega-menu-wrap-header-menu #mega-menu-header-menu a.mega-menu-link {
   -moz-transition: none;
@@ -60,11 +60,6 @@
   visibility: visible;
   text-align: left;
   padding: 0px 0px 0px 0px;
-}
-@media only screen and (max-width: 600px) {
-  #mega-menu-wrap-header-menu #mega-menu-header-menu {
-    background: #222;
-  }
 }
 @media only screen and (max-width: 600px) {
   #mega-menu-wrap-header-menu #mega-menu-header-menu {
@@ -473,10 +468,8 @@
     border-radius: 0 0 0 0;
   }
   #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item {
-    width: 50%;
-  }
-  #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-megamenu > ul.mega-sub-menu > li:nth-child(odd) {
-    clear: left;
+    width: 100%;
+    clear: both;
   }
 }
 #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-flyout ul.mega-sub-menu {
@@ -511,7 +504,7 @@
 }
 #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
   display: block;
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   font-family: inherit;
   font-size: 14px;
@@ -543,7 +536,7 @@
   }
 }
 #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:hover, #mega-menu-wrap-header-menu #mega-menu-header-menu > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:focus {
-  background: #ddd;
+  background: rgba(255, 255, 255, 0.1);
   font-weight: normal;
   text-decoration: none;
   color: #666;
@@ -656,7 +649,7 @@
   display: none;
   z-index: 1;
   cursor: pointer;
-  background: #222;
+  background: rgba(255, 255, 255, 0.1);
   -webkit-border-radius: 2px 2px 2px 2px;
   -moz-border-radius: 2px 2px 2px 2px;
   -ms-border-radius: 2px 2px 2px 2px;

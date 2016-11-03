@@ -1,6 +1,6 @@
 <?php
 /**
- * Single Post Template
+ * Single Course Template
  *
  * Displays single posts
  *
@@ -22,25 +22,27 @@ get_header(); ?>
 
 <?php
 
+	$course_id		= get_the_ID();
 	$thumb 			= get_post_thumbnail_id($post->ID);
 	$img_url 		= wp_get_attachment_url( $thumb,'full');
-	$enroll 		= get_post_meta(get_the_ID(), 'Enroll Now', true);
-	$start 			= get_post_meta(get_the_ID(), 'Course Start', true);
-	$length 		= get_post_meta(get_the_ID(), 'Course Length', true);
-	$time 			= get_post_meta(get_the_ID(), 'Time Requirement', true);
-	$profname 		= get_post_meta(get_the_ID(), 'Professor Name', true);
-	$profbio		= get_post_meta(get_the_ID(), 'Professor Bio', true);
-	$profpic		= get_post_meta(get_the_ID(), 'Professor Pic', true);
-	$certificate	= get_post_meta(get_the_ID(), 'Certificate', true);
-	$tuition		= get_post_meta(get_the_ID(), 'Tuition', true);
+	$enroll 		= get_field('enroll');
+	$start 			= get_field('course_start');
+	$length 		= get_field('course_length');
+	$time 			= get_field('time_requirement');
+	$profname 		= get_field('professor_name');
+	$profbio		= get_field('professor_bio');
+	$profpic		= get_field('professor_pic');
+	$proflink		= get_field('professor_link');
+	$certificate	= get_field('certificate');
+	$tuition		= get_field('course_tuition');
 
 	if($start != ''){
 		$start 		= date("M j, Y", strtotime($start));
 
 		//return $start;
 	}
-
-?>
+   
+    ?>
 
 	<div id="content-header" style="background-image: url(<?php echo($img_url); ?>);">
 		<h2><?php echo(get_the_title()); ?></h2>
@@ -73,6 +75,7 @@ get_header(); ?>
 					<div class="professorinfo">
 						<h4><?php echo($profname); ?></h4>
 						<p><?php echo($profbio); ?></p>
+						<p><a href="<?php echo($proflink); ?>">Learn More</a></p>
 					</div>
 					<div class="clearfix">&nbsp;</div>
 				</div>
